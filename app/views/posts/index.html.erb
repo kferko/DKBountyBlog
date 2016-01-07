@@ -1,0 +1,12 @@
+<%= content_tag :h1, "These are the posts." %>
+<% @posts.each do |post| %>
+Title:<%= post.title %>
+<br>
+Body:<%= post.body %>
+<br>
+Author:<%= post.user.username %>
+<br>
+
+<%= link_to("Delete Post", post_path(post.id), method: :delete) %>
+<br>
+<% end %>

@@ -1,0 +1,7 @@
+<%= content_tag :h1, "This is the user page." %>
+<%= content_tag :h3, "This is a list of all users" %>
+<% @users.each do |user| %>
+<%= user.username %>
+<%= user.email %>
+<br>
+<% end %>
