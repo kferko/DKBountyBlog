@@ -12,7 +12,6 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @comment_post = Comment.where(params[:post_id])
     puts params
-    # @comments = 
   end
 
   def new
@@ -23,7 +22,6 @@ class PostsController < ApplicationController
 
   def create
   	@post = Post.new(post_params)
-  	# @user = User.find(session[:user_id])
   	@user = current_user
   	if @post.save 
   		@user.posts.push @post
@@ -37,11 +35,19 @@ class PostsController < ApplicationController
   end
 
   def edit
-  
+    @post = Post.find(params[:id])
   end
 
   def update
-  	
+    @post = Post.find(params[:id])
+    if current_user.id == @post.user_id
+       @post.update(post_params)
+       redirect_to posts_path
+       flash[:notice] = "Post Updated!"
+    else
+      redirect_to posts_path
+      flash[:alert] = "Nice Try Buddy. Not your post."
+    end
   end
 
   def destroy
