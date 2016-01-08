@@ -12,6 +12,7 @@
 	<% else %>
 	<%= content_tag :h4, "Not logged in" %>
 	<% end %>
+	<%= link_to("Log Out", '/logout', method: :delete) %>
 	<%= flash[:notice] if flash[:notice]%>
 	<%= flash[:alert] if flash[:alert] %>
 

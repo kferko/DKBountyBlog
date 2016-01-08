@@ -7,7 +7,7 @@ Body:<%= post.body %>
 Author:<%= post.user.username %>
 <br>
 
-<%= link_to("Delete Post", post_path(post.id), method: :delete) %>
+	<%= link_to("Delete Post", post_path(post.id), method: :delete) %>
 <br><br>
 	<% post.comments.each do |comment| %>
 	<%= content_tag :h3, "Comment Title."%>

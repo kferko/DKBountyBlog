@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 			flash[:notice] = "Successfully logged in!"
 		else
 			flash[:alert] = "There was a problem logging in."
-			redirect_to root_path
+			redirect_to login_path
 		end
 	end
 

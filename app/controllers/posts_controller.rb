@@ -39,14 +39,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
-    if current_user.id == @post.user_id
-       @post.update(post_params)
-       redirect_to posts_path
-       flash[:notice] = "Post Updated!"
+  	if current_user.id == @post.user_id
+      @post.update
+      redirect_to posts_path
+      flash[:notice] = "Post Updated!"
     else
       redirect_to posts_path
-      flash[:alert] = "Nice Try Buddy. Not your post."
+      flash[:alert] = "nice try buddy!"
     end
   end
 
