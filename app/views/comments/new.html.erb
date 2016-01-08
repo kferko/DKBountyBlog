@@ -1,2 +1,10 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<%= content_tag :h1, "Make a comment!" %>
+<%= content_tag :h3, "Claim your hunt" %>
+
+<%= form_for @comment do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :body %>
+<%= f.text_field :body %>
+<%= f.submit :create %>
+<% end %>
