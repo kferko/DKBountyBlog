@@ -14,9 +14,11 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.user_id = session[:user_id]
+    @comment.post_id = params[:comment][:post_id]
     if @comment.save
       # @user.comments.push @comment
       flash[:notice] = "Awesome New Comment"
+      redirect_to :back
     else
       flash[:alert] = "Please enter a comment"
       redirect_to :back
@@ -39,4 +41,5 @@ class CommentsController < ApplicationController
   private
   def comment_params
     params.require(:comment).permit(:title, :body)
+  end
 end
