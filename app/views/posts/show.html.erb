@@ -5,6 +5,7 @@
 <%= @posts.body %>
 <%=content_tag :h2, "Post Author" %>
 <%= @posts.user.username %>
+<%= link_to("Delete Post", @posts, method: :delete) %>
 
 <% @posts.comments.each do |comment| %>
 	<%= content_tag :h3, "Comment Title."%>
@@ -13,6 +14,7 @@
 	<%= comment.body %>
 	<%= content_tag :h3, " Comment Author." %>
 	<%= comment.user.username %>
+	<%= link_to("Delete comment", comment_path(comment.id), method: :delete) %>
 	<% end %>
 
 <%= form_for @comment do |f| %>
