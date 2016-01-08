@@ -1,2 +1,25 @@
+
+<%=content_tag :h2, "Post Title" %>
 <%= @posts.title %>
+<%=content_tag :h2, "Post Body" %>
 <%= @posts.body %>
+<%=content_tag :h2, "Post Author" %>
+<%= @posts.user.username %>
+
+<% @posts.comments.each do |comment| %>
+	<%= content_tag :h3, "Comment Title."%>
+	<%= comment.title %>
+	<%= content_tag :h3, "Comment Body." %>
+	<%= comment.body %>
+	<%= content_tag :h3, " Comment Author." %>
+	<%= comment.user.username %>
+	<% end %>
+
+<%= form_for @comment do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :body %>
+<%= f.text_field :body %>
+<%= f.hidden_field :post_id, :value => @posts.id %>
+<%= f.submit :create %>
+<% end %>

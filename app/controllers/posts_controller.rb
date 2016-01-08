@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  
+
   def index
 
   	@posts = Post.all
@@ -7,7 +9,10 @@ class PostsController < ApplicationController
 
   def show
   	@posts = Post.find(params[:id])
-  
+    @comment = Comment.new
+    @comment_post = Comment.where(params[:post_id])
+    puts params
+    # @comments = 
   end
 
   def new
@@ -41,12 +46,16 @@ class PostsController < ApplicationController
 
   def destroy
   	@post = Post.find(params[:id])
-	puts "**************"
-	puts "DESTROYING POST"
-	@post.destroy
-	redirect_to posts_path
-  	# @post.destroy
-  
+	  puts "**************"
+	  puts "DESTROYING POST"
+    if current_user.id == @post.user_id
+  	   @post.destroy
+  	   redirect_to posts_path
+       flash[:notice] = "Post Deleted"
+    else
+      redirect_to posts_path
+      flash[:alert] = "Nice Try Buddy. Not your post."
+    end
   end
 
   private
@@ -54,5 +63,6 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :body)
   end
+
 
 end
