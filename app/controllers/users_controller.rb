@@ -19,7 +19,8 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
-  		redirect_to @user 
+      current_user
+  		redirect_to login_path 
   		flash[:notice] = "New account created. Happy Hunting."
   	else
   		redirect_to root_path 
@@ -31,11 +32,15 @@ class UsersController < ApplicationController
   	# Setting @user variable to the user.find for this id.
   	@user = User.find(params[:id])
   	puts "DESTROYING USER *************"
-  	# puts params[:user]
-  	# variable with that user saved is destroyed.
-  	@user.destroy
-  	# Arg error is because it doesnt know where to be redirected to
-  	redirect_to root_path
+    if current_user.id == @user.id
+       @user.destroy
+       redirect_to login_path
+       flash[:alert] = "Your Account Has Been Deleted."
+       session[:user_id] = nil
+    else
+      redirect_to :back
+      flash[:alert] = "Nice Try Buddy. Not your account to delete"
+    end
   end
 
   def edit
