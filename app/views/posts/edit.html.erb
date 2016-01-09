@@ -1,9 +1,10 @@
 <%= content_tag :h1, "Edit a post!" %>
 <%= content_tag :h3, "Han Solo in carbonite" %>
+<%= content_tag :h4, "Post Title" %> 
+<%= @post.title %>
 
+<br><br>
 <%= form_for @post do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
 <%= f.label :body %>
 <%= f.text_field :body %>
 <%= f.submit :update %>

@@ -32,15 +32,20 @@ class UsersController < ApplicationController
   	# Setting @user variable to the user.find for this id.
   	@user = User.find(params[:id])
   	puts "DESTROYING USER *************"
-    if current_user.id == @user.id
-       @user.destroy
-       redirect_to login_path
-       flash[:alert] = "Your Account Has Been Deleted."
-       session[:user_id] = nil
+    if current_user
+        if current_user.id == @user.id
+           @user.destroy
+           redirect_to login_path
+           flash[:alert] = "Your Account Has Been Deleted."
+           session[:user_id] = nil
+        else
+          redirect_to :back
+          flash[:alert] = "Nice Try Buddy. Not your account to delete"
+        end
     else
       redirect_to :back
-      flash[:alert] = "Nice Try Buddy. Not your account to delete"
-    end
+      flash[:alert] = "Please log in to delete your account." 
+    end 
   end
 
   def edit
