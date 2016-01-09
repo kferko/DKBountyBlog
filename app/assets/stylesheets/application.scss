@@ -16,7 +16,7 @@
 body {
 	width: 100vw;
 	height: 100vh;
-	background-image: url('images/bountyblog_wbkg.jpg');
+	background-image: image-url('bountyblog_blank.jpg');
 	background-repeat:no-repeat;
 	background-position: center;
 	margin:0px 0px;
@@ -34,21 +34,24 @@ body {
 	width: 100vw;
 	height: 100vh;
 	z-index: 2;
-	background-color: rgb(255, 168, 167);
+	/*background-color: rgb(255, 168, 167);*/
+	background-image: url('/assets/images/bountyblog_wbkg.jpg');
+	background-repeat:no-repeat;
+	background-position: center;
 }
 .menucontainer {
 	display:flex;
 	z-index: 3;
-	width: 100px;
+	width: 200px;
 	height: 100vh;
 	align-items: center;
-	background-color: rgb(181, 255, 148);
+	// background-color: rgb(181, 255, 148);
 }
 
 #menuin {
 	display:flex;
 	z-index: 4;
-	width: 100px;
+	width: 200px;
 	height: 400px;
 	align-items: center;
 	background-color: rgb(134, 191, 110);
@@ -60,7 +63,7 @@ body {
 /*	align-items:center;*/
 	z-index: 4;
 	height: 600px;
-	background-color: rgb(112, 200, 255);
+	// background-color: rgb(112, 200, 255);
 }
 .usercontainer {
 	display: flex;
