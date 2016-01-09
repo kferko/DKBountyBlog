@@ -11,11 +11,13 @@
 <%= content_tag :h3, "Side:" %><%= @user.profile.side %>
 <% end %>
 <%= link_to("Log Out", '/logout') %>
-<% if @user.profile != nil %>
-<%= link_to("Edit Profile", edit_profile_path(@user.profile.id), method: :get) %>
-<% else %>
-<%= link_to("Create Profile", new_profile_path, method: :get) %>
-<% end %>
+<% if @user.id == @current_user_id %>
+	<% if @user.profile != nil %>
+	<%= link_to("Edit Profile", edit_profile_path(@user.profile.id), method: :get) %>
+	<% else %>
+	<%= link_to("Create Profile", new_profile_path, method: :get) %>
+	<% end %>
+<% end %>	
 <%= link_to("Delete User", user_path(@user.id), method: :delete) %>
 
 <br>
