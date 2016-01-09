@@ -1,0 +1,16 @@
+.bkg {
+	width: 100vw;
+	height: 100vh;
+	background-image: url('/assets/images/boutyblog_wbkg.jpg');
+	background-repeat:no-repeat;
+	background-position: center;
+	z-index: 1;
+}
+.container {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width: 100vw;
+	height: 100vh;
+	z-index: 2;
+}
