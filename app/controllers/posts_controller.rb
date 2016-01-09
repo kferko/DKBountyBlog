@@ -54,13 +54,19 @@ class PostsController < ApplicationController
   	@post = Post.find(params[:id])
 	  puts "**************"
 	  puts "DESTROYING POST"
-    if current_user.id == @post.user_id
-  	   @post.destroy
-  	   redirect_to posts_path
-       flash[:notice] = "Post Deleted"
+    if current_user
+        if current_user.id == @post.user_id
+      	   @post.destroy
+      	   redirect_to posts_path
+           flash[:notice] = "Post Deleted"
+        else
+          redirect_to posts_path
+          flash[:alert] = "Nice Try Buddy. Not your post."
+  
+        end      
     else
-      redirect_to posts_path
-      flash[:alert] = "Nice Try Buddy. Not your post."
+      redirect_to :back
+      flash[:notice] = "Please Log in to do something."    
     end
   end
 
