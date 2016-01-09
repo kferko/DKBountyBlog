@@ -1,0 +1,16 @@
+<%= content_tag :h1, "Think you have what it takes?" %>
+<%= content_tag :h3, "Hunter be hunted. Sign Up." %>
+
+<%= form_for @profile do |f| %>
+<%= f.label :name_or_designation %>
+<%= f.text_field :name %>
+<%= f.label :ship %>
+<%= f.text_field :ship %>
+<%= f.label :home_planet %>
+<%= f.password_field :planet %>
+<%= f.label :weapon_of_choice %>
+<%= f.text_field :weapon %>
+<%= f.label :state_a_side %>
+<%= f.text_field :side %>
+<%= f.submit :create %>
+<% end %>

@@ -1,0 +1,10 @@
+<%= content_tag :h1, "Welcome to your profile hunter." %>
+<%= content_tag :h3, "Name or Designation:" %><%= @user.name %>
+<%= content_tag :h3, "Ship:" %><%= @user.ship %>
+<%= content_tag :h3, "Home Planet:" %><%= @user.planet %>
+<%= content_tag :h3, "Weapon of Choice:" %><%= @user.weapon %>
+<%= content_tag :h3, "Side:" %><%= @user.side %>
+<%= link_to("Log Out", '/logout') %>
+
+<br>
+
