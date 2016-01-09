@@ -2,7 +2,6 @@
 <%= content_tag :h3, "Username:" %><%= @user.username %>
 <%= content_tag :h3, "email:" %><%= @user.email %>
 <%= link_to("Delete User", user_path(@user.id), method: :delete) %>
-<%= link_to("Log Out", '/logout', method: :delete) %>
 
 <br>
 

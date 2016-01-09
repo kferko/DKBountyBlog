@@ -1,21 +1,26 @@
 <%= content_tag :h1, "These are the posts." %>
 <% @posts.each do |post| %>
-Title:<%= link_to post.title, post_path(post.id) %>
+<%= content_tag :h4, "Post Title."%>
+<%= link_to post.title, post_path(post.id) %>
 <br>
-Body:<%= post.body %>
+<%= content_tag :h4, "Post Body."%>
+<%= post.body %>
 <br>
-Author:<%= post.user.username %>
+<%= content_tag :h4, "Post Author."%>
+<%= post.user.username %>
 <br>
 
 	<%= link_to("Delete Post", post_path(post.id), method: :delete) %>
 <br><br>
 	<% post.comments.each do |comment| %>
-	<%= content_tag :h3, "Comment Title."%>
+	<%= content_tag :p, "Comment Title."%>
 	<%= comment.title %>
-	<%= content_tag :h3, "Comment Body." %>
+	<%= content_tag :p, "Comment Body." %>
 	<%= comment.body %>
-	<%= content_tag :h3, " Comment Author." %>
+	<%= content_tag :p, " Comment Author." %>
 	<%= comment.user.username %>
+	<%= link_to("Delete comment", comment_path(comment.id), method: :delete) %>
 	<% end %>
+	<br><br>
 <% end %>
 <br>

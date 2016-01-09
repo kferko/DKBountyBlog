@@ -23,14 +23,20 @@ class PostsController < ApplicationController
   def create
   	@post = Post.new(post_params)
   	@user = current_user
-  	if @post.save 
-  		@user.posts.push @post
-  		redirect_to posts_path
-  		flash[:notice] = "Awesome New Post."
-  	else
-  		flash[:notice] = "Something went wrong when we tried to make your post. Try again."
-  		redirect_to root_path
-  	end
+    if current_user
+
+    	if @post.save 
+    		@user.posts.push @post
+    		redirect_to posts_path
+    		flash[:notice] = "Awesome New Post."
+    	else
+    		flash[:notice] = "Something went wrong when we tried to make your post. Try again."
+    		redirect_to root_path
+    	end
+    else
+      redirect_to posts_path
+      flash[:notice] = "Please Login to make a post."
+    end
 
   end
 
@@ -40,27 +46,38 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if current_user.id == @post.user_id
-       @post.update(post_params)
-       redirect_to posts_path
-       flash[:notice] = "Post Updated!"
+    if current_user
+        if current_user.id == @post.user_id
+           @post.update(post_params)
+           redirect_to @post
+           flash[:notice] = "Post Updated!"
+        else
+          redirect_to @post
+          flash[:alert] = "Nice Try Buddy. Not your post."
+        end
     else
-      redirect_to posts_path
-      flash[:alert] = "Nice Try Buddy. Not your post."
-    end
+      redirect_to :back
+      flash[:alert] = "Please Log in to do something"
+    end  
   end
 
   def destroy
   	@post = Post.find(params[:id])
 	  puts "**************"
 	  puts "DESTROYING POST"
-    if current_user.id == @post.user_id
-  	   @post.destroy
-  	   redirect_to posts_path
-       flash[:notice] = "Post Deleted"
+    if current_user
+        if current_user.id == @post.user_id
+      	   @post.destroy
+      	   redirect_to posts_path
+           flash[:notice] = "Post Deleted"
+        else
+          redirect_to posts_path
+          flash[:alert] = "Nice Try Buddy. Not your post."
+  
+        end      
     else
-      redirect_to posts_path
-      flash[:alert] = "Nice Try Buddy. Not your post."
+      redirect_to :back
+      flash[:notice] = "Please Log in to do something."    
     end
   end
 

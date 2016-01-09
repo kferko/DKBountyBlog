@@ -15,14 +15,19 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = session[:user_id]
     @comment.post_id = params[:comment][:post_id]
-    if @comment.save
-      # @user.comments.push @comment
-      flash[:notice] = "Awesome New Comment"
-      redirect_to :back
+    if current_user
+        if @comment.save
+          flash[:notice] = "Awesome New Comment"
+          redirect_to :back
+        else
+          flash[:alert] = "Please enter a comment"
+          redirect_to :back
+        end
     else
-      flash[:alert] = "Please enter a comment"
       redirect_to :back
+      flash[:notice] = "Please Log in to make a comment." 
     end
+
   end
 
 
@@ -34,8 +39,20 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-  @comment.destroy
-  redirect_to :back
+    if current_user
+        if current_user.id == @comment.user_id
+           @comment.destroy
+           redirect_to :back
+           flash[:notice] = "Comment Deleted"
+        else
+          redirect_to :back
+          flash[:alert] = "Nice Try Buddy. Not your Comment."
+        end
+    else
+      redirect_to :back
+      flash[:notice] = "Please Log in to do something." 
+    end   
+
   end
 
   private
