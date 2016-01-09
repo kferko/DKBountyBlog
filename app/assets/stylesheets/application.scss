@@ -1,0 +1,132 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+	width: 100vw;
+	height: 100vh;
+	background-image: image-url('bountyblog_blank.jpg');
+	background-repeat:no-repeat;
+	background-position: center;
+	margin:0px 0px;
+  	background-size:cover;
+  	display: flex;
+  	flex-direction: column;
+  	overflow-x: hidden;
+  	overflow-y: hidden;
+}
+.container {
+	display:flex;
+	flex:1;
+	justify-content:center;
+	align-items:center;
+	width: 100vw;
+	height: 100vh;
+	z-index: 2;
+	/*background-color: rgb(255, 168, 167);*/
+	background-image: url('/assets/images/bountyblog_wbkg.jpg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+.menucontainer {
+	display:flex;
+	z-index: 3;
+	width: 200px;
+	height: 100vh;
+	align-items: center;
+	// background-color: rgb(181, 255, 148);
+}
+
+#menuin {
+	display:flex;
+	z-index: 4;
+	width: 200px;
+	height: 400px;
+	align-items: center;
+	background-color: rgb(134, 191, 110);
+}
+.content {
+	display: flex;
+	flex: 1;
+	/*justify-content:center;*/
+/*	align-items:center;*/
+	z-index: 4;
+	height: 600px;
+	// background-color: rgb(112, 200, 255);
+}
+.usercontainer {
+	display: flex;
+	z-index: 5;
+	width: 210px;
+	height: 520px;
+	margin-top: 20px;
+	margin-left: 60px;
+	float: left;
+	padding: 20px;
+	background-color: rgb(75, 102, 255);
+}
+.userin {
+	display: flex;
+	z-index: 5;
+	width: 210px;
+	height: 520px;
+	float: left;
+	background-color: rgb(59, 81, 207);
+}
+.window {
+	width:700px;
+	height:700px;
+	z-index: 6;
+	margin-top: 10px;
+	margin-left: 220px;
+	justify-content:center;
+}
+.postcontainer {
+	display: flex;
+	z-index: 6;
+	width: 560px;
+	height: 360px;
+	padding: 20px;
+	background-color: rgb(105, 46, 255);
+}
+#postin {
+	display: flex;
+	z-index: 6;
+	width: 560px;
+	height: 360px;
+	background-color: rgb(71, 31, 175);
+	overflow: auto;
+}
+.commentcontainer {
+	display: flex;
+	z-index: 6;
+	width: 450px;
+	height: 140px;
+	/*margin-top: 10px;*/
+	margin-left: 70px;
+	padding: 20px;
+	background-color: rgb(32, 245, 255);
+}
+#commentin {
+	display: flex;
+	z-index: 6;
+	width: 450px;
+	height: 140px;
+	background-color: rgb(19, 152, 159);
+	overflow: auto;
+}
+
+
+
+

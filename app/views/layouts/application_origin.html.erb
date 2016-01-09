@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bountyblog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<% if session[:user_id] %>
+	<%= content_tag :h4, "Logged in" %>
+	<% else %>
+	<%= content_tag :h4, "Not logged in" %>
+	<% end %>
+	<%= link_to("Log Out", '/logout', method: :delete) %>
+	<%= link_to("Log In", '/login', method: :create) %>
+	<%= link_to("All Posts", '/posts', method: :get) %>
+	<%= link_to("New Post", '/posts/new', method: :get) %>
+	<%= flash[:notice] if flash[:notice]%>
+	<%= flash[:alert] if flash[:alert] %>
+
+<%= yield %>
+
+</body>
+</html>
