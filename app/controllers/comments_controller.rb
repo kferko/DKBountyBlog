@@ -15,14 +15,19 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = session[:user_id]
     @comment.post_id = params[:comment][:post_id]
-    if @comment.save
-      # @user.comments.push @comment
-      flash[:notice] = "Awesome New Comment"
-      redirect_to :back
+    if current_user
+        if @comment.save
+          flash[:notice] = "Awesome New Comment"
+          redirect_to :back
+        else
+          flash[:alert] = "Please enter a comment"
+          redirect_to :back
+        end
     else
-      flash[:alert] = "Please enter a comment"
       redirect_to :back
+      flash[:notice] = "Please Log in to make a comment." 
     end
+
   end
 
 
