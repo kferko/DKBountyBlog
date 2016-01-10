@@ -129,7 +129,7 @@ body {
 	// background-color: rgb(59, 81, 207);
 }
 .userup {
-	display: none;
+	display: flex;
 	z-index: 5;
 	width: 210px;
 	height: 520px;
@@ -149,8 +149,8 @@ body {
 	float: left;
 }
 .postcontainer {
-	display: none;
-	// display: flex;
+	// display: none;
+	display: flex;
 	z-index: 9;
 	width: 655px;
 	height: 390px;
@@ -198,8 +198,8 @@ body {
 	overflow: auto;
 }
 .commentcontainer {
-	display: none;
-	// display: flex;
+	// display: none;
+	display: flex;
 	z-index: 10;
 	width: 595px;
 	height: 215px;
@@ -208,7 +208,7 @@ body {
 	background-image: image-url('bkg_comment.png');
 	background-repeat: no-repeat;
 	background-position: center;
-	position: relative;
+	position: absolute;
 }
 #commentin {
 	width: 520px;

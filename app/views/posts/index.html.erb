@@ -1,20 +1,3 @@
-		<div class="menucontainer">
-			<a href='/'><div class="logo"></div></a>
-			<div id="menuin">
-				<ul>
-				<div class='mb1' id='clickmb1'>
-					<a href='/profiles'>sign up</a>
-				</div>
-				<div class="mb2" id="clickmb2">sign in</div>
-				<div class="mb3" id="clickmb3"><a href='/profiles'>view users</a></div>
-				<div class="mb4" id="clickmb4">view posts</div>
-				</ul>
-			</div>
-		</div>
-		<div class="sitename">
-			title of blog goes here
-		</div>
-		<div class="content">
 			<div class="usercontainer">
 				<div class="userup">
 					pulls in code to allow user to sign up
@@ -26,6 +9,19 @@
 				</div>
 			</div>
 			<div class="window">
+				<div class="postcontainer">
+					<div id="posttitle">
+					</div>
+					<div id="postdetails">
+					</div>
+					<div id="postin">
+
+					</div>
+				</div>
+				<div class="commentcontainer">
+					<div id="commentin">
+					</div>
+				</div>
 				<div class="planet"></div>
 				<div class="locate">
 					<div class="lm1 locateturn" id="lt1"></div>
@@ -36,48 +32,4 @@
 					<div class="cm3 opticturn" id="ot3"></div>
 					<div class="cm4 opticturn" id="ot4"></div>
 				</div>
-				<div class="postcontainer">
-					<div id="posttitle">
-						<% @posts.each do |post| %>
-						<%= content_tag :h4, "Post Title."%>
-						<%= link_to post.title, post_path(post.id) %>
-						<% end %>
-					</div>
-					<div id="postdetails">
-						<% @posts.each do |post| %>
-						<%= content_tag :h4, "Post Author."%>
-						<%= post.user.username %>
-						<% end %>
-					</div>
-					<div id="postin">
-						<%= content_tag :h1, "These are the posts." %>
-						<% @posts.each do |post| %>
-						<%= content_tag :h4, "Post Title."%>
-						<%= link_to post.title, post_path(post.id) %>
-						<br>
-						<%= content_tag :h4, "Post Body."%>
-						<%= post.body %>
-						<br>
-						<%= content_tag :h4, "Post Author."%>
-						<%= post.user.username %>
-						<br>
-						<%= link_to("Delete Post", post_path(post.id), method: :delete) %>
-					</div>
-				</div>
-				<div class="commentcontainer">
-					<div id="commentin">
-						<% post.comments.each do |comment| %>
-						<%= content_tag :p, "Comment Title."%>
-						<%= comment.title %>
-						<%= content_tag :p, "Comment Body." %>
-						<%= comment.body %>
-						<%= content_tag :p, " Comment Author." %>
-						<%= comment.user.username %>
-						<%= link_to("Delete comment", comment_path(comment.id), method: :delete) %>
-						<% end %>
-						<br><br>
-						<% end %>
-					</div>
-				</div>
 			</div>
-		</div>

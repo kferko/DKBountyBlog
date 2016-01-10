@@ -8,7 +8,30 @@
 </head>
 <body>
 	<div class="container">
+			<div class="menucontainer">
+			<a href='/'><div class="logo"></div></a>
+			<div id="menuin">
+				<ul>
+				<div class='mb1' id='clickmb1'>
+					<a href='/users/new'>sign up</a>
+				</div>
+				<div class="mb2" id="clickmb2">
+					<a href='/login'>sign in</a>
+				</div>
+				<div class="mb3" id="clickmb3">
+				<a href='/users'>view users</a></div>
+				<div class="mb4" id="clickmb4">
+					<a href='/posts'>view posts</a>
+				</div>
+				</ul>
+			</div>
+		</div>
+		<div class="sitename">
+			title of blog goes here
+		</div>
+		<div class="content">
 		<%= yield %>
+		</div>
 	</div>
 
 	<!-- <% if session[:user_id] %> -->
