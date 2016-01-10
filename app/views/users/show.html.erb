@@ -1,6 +1,9 @@
 <%= content_tag :h1, "Welcome to your page hunter." %>
 <%= content_tag :h3, "Username:" %><%= @user.username %>
+<%= content_tag :h3, "Avatar:" %>
+<%= image_tag @user.profile.avatar_url(:thumb).to_s %>
 <%= content_tag :h3, "email:" %><%= @user.email %>
+
 <%= content_tag :h1, "Welcome to your profile hunter." %>
 <%= content_tag :h1, "Welcome to your profile hunter." %>
 <% if @user.profile != nil %>

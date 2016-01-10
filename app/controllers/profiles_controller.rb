@@ -55,7 +55,7 @@ class ProfilesController < ApplicationController
   private
   
   def profile_params
-    params.require(:profile).permit(:name, :ship, :planet, :weapon, :side)
+    params.require(:profile).permit(:name, :ship, :planet, :weapon, :side, :avatar)
   end
 
 end
