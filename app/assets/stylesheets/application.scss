@@ -84,12 +84,17 @@ body {
 	z-index: 44;
 	flex: 1;
 	height: 60px;
-	top: 0;
+	top: -50px;
 	margin-bottom: 40px;
 	margin-left: 62%;
 	text-align: left;
-	padding-top:20px;
+	
 	position: fixed;
+}
+
+.sitename h1 {
+	font-family: 'Quantico', sans-serif;
+	font-size: 54px;
 }
 .content {
 	display: flex;

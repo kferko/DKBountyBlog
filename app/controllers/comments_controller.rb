@@ -41,6 +41,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     if current_user
+      # making sure program doesn't crash if user trying to click is not signed in.
         if current_user.id == @comment.user_id
            @comment.destroy
            redirect_to :back
