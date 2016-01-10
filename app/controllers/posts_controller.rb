@@ -24,9 +24,10 @@ class PostsController < ApplicationController
   	@post = Post.new(post_params)
   	@user = current_user
     if current_user
-
+      # making sure that the user is signed in so it doesn't crash when clicked.
     	if @post.save 
     		@user.posts.push @post
+        # pushing the current usesr_id into the post params.
     		redirect_to posts_path
     		flash[:notice] = "Awesome New Post."
     	else

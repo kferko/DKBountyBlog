@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    # these two lines set the comment's user_id to the current user and the post_id to the current post.
     @comment.user_id = session[:user_id]
     @comment.post_id = params[:comment][:post_id]
     if current_user
