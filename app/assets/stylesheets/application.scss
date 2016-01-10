@@ -54,9 +54,21 @@ body {
 	align-items: center;
 	background-color: rgb(134, 191, 110);
 }
+.sitename {
+	display: flex;
+	z-index: 44;
+	flex: 1;
+	height: 60px;
+	top: 0;
+	margin-bottom: 40px;
+	margin-left: 62%;
+	text-align: left;
+	padding-top:20px;
+	position: fixed;
+}
 .content {
 	display: flex;
-	flex: 1;
+	flex: 2;
 	/*justify-content:center;*/
 /*	align-items:center;*/
 	z-index: 4;
@@ -87,30 +99,56 @@ body {
 	height:700px;
 	z-index: 6;
 	margin-top: 10px;
-	margin-left: 160px;
+	margin-left: 110px;
 	justify-content:center;
+	float: left;
 }
 .postcontainer {
 	display: flex;
 	z-index: 6;
 	width: 655px;
 	height: 390px;
-	padding: 20px;
 	background-image: image-url('bkg_post.png');
 	background-repeat:no-repeat;
 	background-position: center;
 	display:flex;
-	justify-content:center;
-	align-items:center;
+	margin-bottom: 30px;
+}
+#posttitle {
+	// display: flex;
+	z-index: 6;
+	width: 260px;
+	height: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 40px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, .5);
+	position: fixed;
+}
+#postdetails {
+	// display: flex;
+	z-index: 6;
+	width: 260px;
+	height: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 340px;
+	background-color: rgba(255, 255, 255, .5);
+	text-align: right;
+	padding: 10px;
+	position: fixed;
 }
 #postin {
-	display: flex;
+	// display: flex;
 	z-index: 6;
-	width: 635px;
-	height: 390px;
-	margin-top: 20px;
-	margin-left: 20px;
+	width: 550px;
+	height: 300px;
+	margin-top: 80px;
+	margin-left: 40px;
+	padding-left: 30px;
 	background-color: rgba(255, 255, 255, .5);
+	position: absolute;
 	overflow: auto;
 }
 .commentcontainer {
@@ -119,7 +157,7 @@ body {
 	width: 450px;
 	height: 140px;
 	/*margin-top: 10px;*/
-	margin-left: 70px;
+	margin-left: 130px;
 	padding: 20px;
 	background-color: rgb(32, 245, 255);
 }
