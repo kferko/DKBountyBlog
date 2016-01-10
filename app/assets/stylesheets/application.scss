@@ -165,19 +165,22 @@ body {
 .commentcontainer {
 	display: flex;
 	z-index: 6;
-	width: 450px;
-	height: 140px;
-	/*margin-top: 10px;*/
-	margin-left: 130px;
-	padding: 20px;
-	background-color: rgb(32, 245, 255);
+	width: 595px;
+	height: 215px;
+	background-image: image-url('bkg_comment.png');
+	background-repeat:no-repeat;
+	background-position: center;
+	margin-left: 30px;
+	margin-top: -50px;
 }
 #commentin {
 	display: flex;
 	z-index: 6;
-	width: 450px;
+	width: 520px;
 	height: 140px;
-	background-color: rgb(19, 152, 159);
+	margin-top: 60px;
+	margin-left: 30px;
+	background-color: rgba(255, 255, 255, .5);
 	overflow: auto;
 }
 
