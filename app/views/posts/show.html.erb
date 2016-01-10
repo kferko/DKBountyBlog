@@ -5,6 +5,8 @@
 <%= @posts.body %>
 <%=content_tag :h2, "Post Author" %>
 <%= @posts.user.username %>
+<%=content_tag :h2, "Post Image" %>
+<%= image_tag @posts.image_url(:thumb).to_s %>
 <%= link_to("Delete Post", @posts, method: :delete) %>
 <%= link_to("Edit Post", edit_post_path, method: :get) %>
 
