@@ -15,3 +15,26 @@
 //= require turbolinks
 //= require_tree .
 
+var y = 0;
+$(function() {
+  $("#clickmb1").click(function() {
+   // $(".postcontainer,.commentcontainer").fadeIn();
+   // $("#div2,#div3,#div4").fadeOut();
+    if (y == 0) {
+    	$(".postcontainer,.commentcontainer").delay(2000).fadeIn(1000);
+    	$(".cm1").toggleClass("ot1-anim");
+    	$(".cm2").toggleClass("ot2-anim");
+    	$(".cm3").toggleClass("ot3-anim");
+    	$(".cm4").toggleClass("ot4-anim");
+      	y = 1;
+    } else {
+    	$(".postcontainer,.commentcontainer").fadeOut(1000);
+    	$(".cm1, .cm2, .cm3, .cm4").delay(2000).toggleClass("ot1-reanim");
+      	y = 0;
+    }
+  });
+  });
+// $("#img1").on('click', function() {
+//    $("#div1").fadeIn();
+//    $("#div2,#div3,#div4").fadeOut();
+// });
