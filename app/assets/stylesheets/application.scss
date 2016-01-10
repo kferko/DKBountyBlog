@@ -16,7 +16,7 @@
 body {
 	width: 100vw;
 	height: 100vh;
-	background-image: image-url('bountyblog_blank.jpg');
+	background-image: image-url('bkg_bf.png');
 	background-repeat:no-repeat;
 	background-position: center;
 	margin:0px 0px;
@@ -34,8 +34,6 @@ body {
 	width: 100vw;
 	height: 100vh;
 	z-index: 2;
-	/*background-color: rgb(255, 168, 167);*/
-	background-image: url('/assets/images/bountyblog_wbkg.jpg');
 	background-repeat:no-repeat;
 	background-position: center;
 }
@@ -89,23 +87,30 @@ body {
 	height:700px;
 	z-index: 6;
 	margin-top: 10px;
-	margin-left: 220px;
+	margin-left: 160px;
 	justify-content:center;
 }
 .postcontainer {
 	display: flex;
 	z-index: 6;
-	width: 560px;
-	height: 360px;
+	width: 655px;
+	height: 390px;
 	padding: 20px;
-	background-color: rgb(105, 46, 255);
+	background-image: image-url('bkg_post.png');
+	background-repeat:no-repeat;
+	background-position: center;
+	display:flex;
+	justify-content:center;
+	align-items:center;
 }
 #postin {
 	display: flex;
 	z-index: 6;
-	width: 560px;
-	height: 360px;
-	background-color: rgb(71, 31, 175);
+	width: 635px;
+	height: 390px;
+	margin-top: 20px;
+	margin-left: 20px;
+	background-color: rgba(255, 255, 255, .5);
 	overflow: auto;
 }
 .commentcontainer {
