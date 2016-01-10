@@ -134,7 +134,7 @@ body {
 	// background-color: rgb(59, 81, 207);
 }
 .userup {
-	display: none;
+	display: flex;
 	z-index: 5;
 	width: 210px;
 	height: 520px;
@@ -154,8 +154,8 @@ body {
 	float: left;
 }
 .postcontainer {
-	display: none;
-	// display: flex;
+	// display: none;
+	display: flex;
 	z-index: 9;
 	width: 655px;
 	height: 390px;
@@ -203,8 +203,8 @@ body {
 	overflow: auto;
 }
 .commentcontainer {
-	display: none;
-	// display: flex;
+	// display: none;
+	display: flex;
 	z-index: 10;
 	width: 595px;
 	height: 215px;
@@ -213,7 +213,7 @@ body {
 	background-image: image-url('bkg_comment.png');
 	background-repeat: no-repeat;
 	background-position: center;
-	position: relative;
+	position: absolute;
 }
 #commentin {
 	width: 520px;
@@ -289,6 +289,57 @@ body {
 	transform: rotate(120deg);
 	transition-duration: 0.5s;
 }
+.ot5-anim {
+	transform: rotate(105deg);
+	transition-duration: 1.5s;
+}
+.ot6-anim {
+	transform: rotate(-120deg);
+	transition-duration: 1.25s;
+}
+.ot7-anim {
+	transform: rotate(-45deg);
+	transition-duration: 0.5s;
+}
+.ot8-anim {
+	transform: rotate(266deg);
+	transition-duration: 0.5s;
+}
+.ot9-anim {
+	transform: rotate(305deg);
+	transition-duration: 1.3s;
+}
+.ot10-anim {
+	transform: rotate(35deg);
+	transition-duration: 0.8s;
+}
+.ot11-anim {
+	transform: rotate(-207deg);
+	transition-duration: 0.95s;
+}
+.ot12-anim {
+	transform: rotate(137deg);
+	transition-duration: 0.2s;
+}
+.ot13-anim {
+	transform: rotate(193deg);
+	transition-duration: 0.45s;
+}
+.ot14-anim {
+	transform: rotate(-75deg);
+	transition-duration: 1.6s;
+}
+.ot15-anim {
+	transform: rotate(-217deg);
+	transition-duration: 0.8s;
+}
+.ot16-anim {
+	transform: rotate(325deg);
+	transition-duration: 0.13s;
+}
+
+
+
 .ot1-reanim  {
 	transform: rotate(0deg);
 	transition-duration: 2s;

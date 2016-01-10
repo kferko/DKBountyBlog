@@ -1,15 +1,17 @@
-<%= content_tag :h1, "Think you have what it takes?" %>
-<%= content_tag :h3, "Hunter be hunted. Sign Up." %>
-
-<%= form_for @user do |f| %>
-<%= f.label :username %>
-<%= f.text_field :username %>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.label :confirm_password %>
-<%= f.password_field :password_confirmation %>
-<%= f.submit :create %>
-<% end %>
-
+<div class="signupTitleContainer">
+	<%= content_tag :h1, "Think you have what it takes?"%>
+	<%= content_tag :h3, "Hunter be hunted. Sign Up." %>
+</div>
+<div class="signupContainer">
+	<%= form_for @user do |f| %>
+	<%= f.label :username %>
+	<%= f.text_field :username, :placeholder => "username", :class => "signupField" %>
+	<%= f.label :email %>
+	<%= f.text_field :email, :placeholder => "email", :class => "signupField" %>
+	<%= f.label :password %>
+	<%= f.password_field :password, :class => "signupField" %>
+	<%= f.label :confirm_password %>
+	<%= f.password_field :password_confirmation, :class => "signupField"  %>
+	<%= f.submit :create, :class => "signupButton" %>
+	<% end %>
+</div>
