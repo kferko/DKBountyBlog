@@ -38,10 +38,10 @@ $(function() {
     if (y == 0) {
     	$(".userin").delay(1000).fadeIn(1000);
     	$(".postcontainer,.commentcontainer,.userup,.userlist").fadeOut(1000);
-    	$(".cm1").toggleClass("ot1-anim");
-    	$(".cm2").toggleClass("ot2-anim");
-    	$(".cm3").toggleClass("ot3-anim");
-    	$(".cm4").toggleClass("ot4-anim");
+    	$(".cm1").toggleClass("ot5-anim");
+    	$(".cm2").toggleClass("ot6-anim");
+    	$(".cm3").toggleClass("ot7-anim");
+    	$(".cm4").toggleClass("ot8-anim");
       	y = 1;
     } else {
     	$(".userin").fadeOut(1000);
@@ -55,10 +55,10 @@ $(function() {
     if (y == 0) {
     	$(".userlist").delay(1000).fadeIn(1000);
     	$(".postcontainer,.commentcontainer,.userup,.userin").fadeOut(1000);
-    	$(".cm1").toggleClass("ot1-anim");
-    	$(".cm2").toggleClass("ot2-anim");
-    	$(".cm3").toggleClass("ot3-anim");
-    	$(".cm4").toggleClass("ot4-anim");
+    	$(".cm1").toggleClass("ot9-anim");
+    	$(".cm2").toggleClass("ot10-anim");
+    	$(".cm3").toggleClass("ot11-anim");
+    	$(".cm4").toggleClass("ot12-anim");
       	y = 1;
     } else {
     	$(".userlist").fadeOut(1000);
@@ -72,10 +72,10 @@ $(function() {
     if (y == 0) {
     	$(".postcontainer,.commentcontainer").delay(1000).fadeIn(1000);
     	$(".userup,.userin,.userlist").fadeOut(1000);
-    	$(".cm1").toggleClass("ot1-anim");
-    	$(".cm2").toggleClass("ot2-anim");
-    	$(".cm3").toggleClass("ot3-anim");
-    	$(".cm4").toggleClass("ot4-anim");
+    	$(".cm1").toggleClass("ot13-anim");
+    	$(".cm2").toggleClass("ot14-anim");
+    	$(".cm3").toggleClass("ot15-anim");
+    	$(".cm4").toggleClass("ot16-anim");
       	y = 1;
     } else {
     	$(".postcontainer,.commentcontainer").fadeOut(1000);
