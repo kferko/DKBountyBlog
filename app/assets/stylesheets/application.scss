@@ -16,7 +16,7 @@
 body {
 	width: 100vw;
 	height: 100vh;
-	background-image: image-url('bkg.png');
+	background-image: image-url('bkg_new.png');
 	background-repeat:no-repeat;
 	background-position: center;
 	margin:0px 0px;
@@ -37,6 +37,34 @@ body {
 	background-repeat:no-repeat;
 	background-position: center;
 }
+.menu_new {
+	display: flex;
+	width: 100vw;
+	height: 150px;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	justify-content:center;
+	z-index: 9999;
+}
+.menubox {
+	display: flex;
+	// position: absolute;
+	width: 250px;
+	height: 154px;
+	margin-top: 70px;
+	background-image: image-url('menu_box.png');
+	background-repeat:no-repeat;
+	background-position: center;
+	cursor: pointer;;
+}
+#linkc {
+	width: 250px;
+	color: rgba(255, 255, 255, .7);
+	text-align: center;
+	padding-top: 40px;
+	font-size: 1.2em;
+}
 .menucontainer {
 	display:flex;
 	z-index: 3;
@@ -55,9 +83,53 @@ body {
 	position: fixed;
     top: 0px;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 80px;
     opacity: 0.7;
 }
+
+.lightup {
+	display: none;
+	position: absolute;
+	width: 550px;
+	height: 1150px;
+	margin-top: -105px;
+    margin-left: -980px;
+	background-image: image-url('lightup_bkg.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+	opacity: 0.3;
+	z-index: 1;
+}
+.hovertop {
+	display: none;
+	position: absolute;
+	width: 350px;
+	height: 100px;
+	margin-top: 95px;
+    margin-left: 560px;
+	background-image: image-url('hover_top.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+	opacity: 0.8;
+	z-index: 2;
+}
+
+.hoverbottom {
+	display: none;
+	position: absolute;
+	width: 350px;
+	height: 100px;
+	margin-top: 595px;
+    margin-left: 560px;
+	background-image: image-url('hover_bottom.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+	opacity: 0.8;
+	z-index: 2;
+}
+
+
+
 
 #menuin {
 	display:flex;
@@ -144,17 +216,18 @@ body {
 	height:700px;
 	z-index: 6;
 	margin-top: 10px;
-	margin-left: 110px;
+	margin-left: 370px;
 	justify-content:center;
-	float: left;
+	// float: left;
 }
 .postcontainer {
-	// display: none;
-	display: flex;
+	display: none;
+	// display: flex;
 	z-index: 9;
-	width: 655px;
+	width: 965px;
 	height: 390px;
-	background-image: image-url('bkg_post.png');
+	margin-left: -120px;
+	background-image: image-url('post_bkg.svg');
 	background-repeat:no-repeat;
 	background-position: center;
 	margin-bottom: 30px;
@@ -163,7 +236,7 @@ body {
 #posttitle {
 	// display: flex;
 	z-index: 9;
-	width: 260px;
+	width: 620px;
 	height: 20px;
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -175,11 +248,11 @@ body {
 #postdetails {
 	// display: flex;
 	z-index: 9;
-	width: 260px;
+	width: 200px;
 	height: 20px;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	margin-left: 340px;
+	margin-left: 700px;
 	background-color: rgba(255, 255, 255, .5);
 	text-align: right;
 	padding: 10px;
@@ -188,7 +261,7 @@ body {
 #postin {
 	// display: flex;
 	z-index: 9;
-	width: 550px;
+	width: 850px;
 	height: 300px;
 	margin-top: 80px;
 	margin-left: 40px;
@@ -197,40 +270,64 @@ body {
 	position: absolute;
 	overflow: auto;
 }
-.commentcontainer {
-	// display: none;
-	display: flex;
+
+.commentaddition {
+	display: none;
+	// display: flex;
 	z-index: 10;
-	width: 595px;
-	height: 215px;
-	margin-top: 380px;
-	margin-left: 60px;
-	background-image: image-url('bkg_comment.png');
+	width: 375px;
+	height: 175px;
+	margin-top: 400px;
+	margin-left: -120px;
+	background-image: image-url('addcomm_bkg.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+}
+#commentaddin {
+	width: 330px;
+	height: 150px;
+	margin-top: 15px;
+	margin-left: 30px;
+	background-color: rgba(255, 255, 255, .5);
+	overflow: auto;
+	position: absolute;
+}
+.commentcontainer {
+	display: none;
+	// display: flex;
+	z-index: 10;
+	width: 585px;
+	height: 175px;
+	margin-top: 400px;
+	margin-left: 268px;
+	background-image: image-url('comm_bkg.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	position: absolute;
 }
 #commentin {
-	width: 520px;
-	height: 140px;
-	margin-top: 60px;
-	margin-left: 40px;
+	width: 540px;
+	height: 150px;
+	margin-top: 15px;
+	margin-left: 20px;
 	background-color: rgba(255, 255, 255, .5);
 	overflow: auto;
 	position: absolute;
 }
 
 .optics {
+	display: none;
 	z-index: 7;
-	width: 667px;
-	height: 667px;
+	width: 500px;
+	height: 500px;
 	position: absolute;
-	margin-top: -50px;
-	margin-left: 30px;
+	margin-top: 30px;
+	margin-left: 110px;
 }
 .opticturn {
-	width: 667px;
-	height: 667px;
+	width: 500px;
+	height: 500px;
 }
 #ot1 {
 	background-image: image-url('ot1.svg');
@@ -369,8 +466,8 @@ body {
 	width: 120px;
 	height: 120px;
 	position: absolute;
-	margin-top: 540px;
-	margin-left: 545px;
+	margin-top: 260px;
+	margin-left: 745px;
 	background-image: image-url('planet.svg');
 	background-repeat:no-repeat;
 	background-position: center;

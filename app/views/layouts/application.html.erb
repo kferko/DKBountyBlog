@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="container">
-			<div class="menucontainer">
+<!-- 		<div class="menucontainer">
 			<a href='/'><div class="logo"></div></a>
 			<div id="menuin">
 				<ul>
@@ -25,13 +25,31 @@
 				</div>
 				</ul>
 			</div>
+		</div> -->
+		<a href='/'><div class="logo"></div></a>
+		<div class="hovertop"></div>
+		<div class="hoverbottom"></div>
+		<div class="menu_new">
+			<div class="menubox">
+				<a href='/posts'><div id="linkc">posts</div></a>
+			</div>
+			<div class="menubox">
+				<a href='/users'><div id="linkc">users</div></a>
+			</div>
+			<div class="menubox">
+				<div id="linkc">linklink</div>
+			</div>
+			<div class="menubox">
+				<div id="linkc">linklink</div>
+			</div>
 		</div>
 		<div class="sitename">
-			title of blog goes here
+			<h1>Justice Junction</h1>
 		</div>
 		<div class="content">
 		<%= yield %>
 		</div>
+		<div class="lightup"></div>
 	</div>
 
 	<!-- <% if session[:user_id] %> -->

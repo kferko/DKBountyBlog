@@ -1,21 +1,26 @@
-			<div class="usercontainer">
-				<div class="userup">
-					pulls in code to allow user to sign up
-				</div>
-				<div class="userin">
-					pulls in code to allow user to sign in
-				</div>
-				<div class="userlist">
-				</div>
-			</div>
 			<div class="window">
 				<div class="postcontainer">
 					<div id="posttitle">
+						<% @posts.each do |post| %>
+						<%= content_tag :h4, "Post Title." ; link_to post.title, post_path(post.id)%>
+						<% end %>
 					</div>
 					<div id="postdetails">
+						<% @posts.each do |post| %>
+						<%= content_tag :h4, "Post Author." ; post.user.username %>
+						<% end %>
 					</div>
 					<div id="postin">
-
+						<%= content_tag :h1, "These are the posts." %>
+							<% @posts.each do |post| %>
+							<%= content_tag :h4, "Post Body."%>
+							<%= post.body %>
+							<%= link_to("Delete Post", post_path(post.id), method: :delete) %>
+							<% end %>
+					</div>
+				</div>
+				<div class="commentaddition">
+					<div id="commentaddin">
 					</div>
 				</div>
 				<div class="commentcontainer">

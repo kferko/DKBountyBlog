@@ -1,3 +1,100 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.postcontainer {
+	display: none;
+	// display: flex;
+	z-index: 9;
+	width: 965px;
+	height: 390px;
+	margin-left: -120px;
+	background-image: image-url('post_bkg.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+	margin-bottom: 30px;
+	position: absolute;
+}
+#posttitle {
+	// display: flex;
+	z-index: 9;
+	width: 620px;
+	height: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 40px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, .5);
+	position: fixed;
+}
+#postdetails {
+	// display: flex;
+	z-index: 9;
+	width: 200px;
+	height: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 700px;
+	background-color: rgba(255, 255, 255, .5);
+	text-align: right;
+	padding: 10px;
+	position: fixed;
+}
+#postin {
+	// display: flex;
+	z-index: 9;
+	width: 850px;
+	height: 300px;
+	margin-top: 80px;
+	margin-left: 40px;
+	padding-left: 30px;
+	background-color: rgba(255, 255, 255, .5);
+	position: absolute;
+	overflow: auto;
+}
+
+.commentaddition {
+	display: none;
+	// display: flex;
+	z-index: 10;
+	width: 375px;
+	height: 175px;
+	margin-top: 400px;
+	margin-left: -120px;
+	background-image: image-url('addcomm_bkg.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+}
+#commentaddin {
+	width: 330px;
+	height: 150px;
+	margin-top: 15px;
+	margin-left: 30px;
+	background-color: rgba(255, 255, 255, .5);
+	overflow: auto;
+	position: absolute;
+}
+.commentcontainer {
+	display: none;
+	// display: flex;
+	z-index: 10;
+	width: 585px;
+	height: 175px;
+	margin-top: 400px;
+	margin-left: 268px;
+	background-image: image-url('comm_bkg.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+}
+#commentin {
+	width: 540px;
+	height: 150px;
+	margin-top: 15px;
+	margin-left: 20px;
+	background-color: rgba(255, 255, 255, .5);
+	overflow: auto;
+	position: absolute;
+}
