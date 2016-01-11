@@ -16,7 +16,7 @@
 body {
 	width: 100vw;
 	height: 100vh;
-	background-image: image-url('bkg.png');
+	background-image: image-url('bkg_new.png');
 	background-repeat:no-repeat;
 	background-position: center;
 	margin:0px 0px;
@@ -37,12 +37,33 @@ body {
 	background-repeat:no-repeat;
 	background-position: center;
 }
-.menucontainer {
-	display:flex;
-	z-index: 3;
-	width: 240px;
-	height: 100vh;
-	align-items: center;
+.menu_new {
+	display: flex;
+	width: 100vw;
+	height: 150px;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	justify-content:center;
+	z-index: 9999;
+}
+.menubox {
+	display: flex;
+	// position: absolute;
+	width: 250px;
+	height: 154px;
+	margin-top: 70px;
+	background-image: image-url('menu_box.png');
+	background-repeat:no-repeat;
+	background-position: center;
+	cursor: crosshair;
+}
+#linkc {
+	width: 250px;
+	color: rgba(255, 255, 255, .7);
+	text-align: center;
+	padding-top: 40px;
+	font-size: 1.2em;
 }
 .logo {
 	display: flex;
@@ -55,46 +76,71 @@ body {
 	position: fixed;
     top: 0px;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 80px;
     opacity: 0.7;
 }
-
-#menuin {
-	display:flex;
-	z-index: 4;
-	width: 220px;
-	height: 400px;
-	// padding: 10px;
-	align-items: center;
-}
-.mb1, .mb2, .mb3, .mb4 {
-	width: 200px;
-	height: 60px;
-	text-align: center;
-	padding-top: 30px;
-	margin-bottom: -15px;
-	background-image: image-url('bountyblog_menu.png');
-	background-repeat:no-repeat;
-	background-position: center;
-	color: rgba(255, 255, 255, .7);
-	cursor: pointer;
+.loginout {
+	position: fixed;
+	z-index: 9998;
+	width: 400px;
+	height: 50px;
+	margin-top: 20px;
+    margin-left: 950px;
+	// background-color: rgb(112, 200, 255);
+	text-align: right;
+	line-height: 24px;
 }
 .sitename {
 	display: flex;
 	z-index: 44;
 	flex: 1;
 	height: 60px;
-	top: -50px;
+	top: 0;
 	margin-bottom: 40px;
-	margin-left: 62%;
+	margin-left: 650px;
 	text-align: left;
-	
+	padding-top:20px;
 	position: fixed;
 }
 
-.sitename h1 {
-	font-family: 'Quantico', sans-serif;
-	font-size: 54px;
+.lightup {
+	display: none;
+	position: absolute;
+	width: 550px;
+	height: 1150px;
+	margin-top: -105px;
+    margin-left: -980px;
+	background-image: image-url('lightup_bkg.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+	opacity: 0.3;
+	z-index: 1;
+}
+.hovertop {
+	display: none;
+	position: absolute;
+	width: 350px;
+	height: 100px;
+	margin-top: 95px;
+    margin-left: 560px;
+	background-image: image-url('hover_top.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+	opacity: 0.8;
+	z-index: 2;
+}
+.hoverbottom {
+	display: none;
+	position: absolute;
+	width: 350px;
+	height: 100px;
+	margin-top: 595px;
+    margin-left: 560px;
+	background-image: image-url('hover_bottom.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+	opacity: 0.8;
+	z-index: 2;
 }
 .content {
 	display: flex;
@@ -149,93 +195,22 @@ body {
 	height:700px;
 	z-index: 6;
 	margin-top: 10px;
-	margin-left: 110px;
+	margin-left: 370px;
 	justify-content:center;
-	float: left;
+	// float: left;
 }
-.postcontainer {
-	// display: none;
-	display: flex;
-	z-index: 9;
-	width: 655px;
-	height: 390px;
-	background-image: image-url('bkg_post.png');
-	background-repeat:no-repeat;
-	background-position: center;
-	margin-bottom: 30px;
-	position: absolute;
-}
-#posttitle {
-	// display: flex;
-	z-index: 9;
-	width: 260px;
-	height: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	margin-left: 40px;
-	padding: 10px;
-	background-color: rgba(255, 255, 255, .5);
-	position: fixed;
-}
-#postdetails {
-	// display: flex;
-	z-index: 9;
-	width: 260px;
-	height: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	margin-left: 340px;
-	background-color: rgba(255, 255, 255, .5);
-	text-align: right;
-	padding: 10px;
-	position: fixed;
-}
-#postin {
-	// display: flex;
-	z-index: 9;
-	width: 550px;
-	height: 300px;
-	margin-top: 80px;
-	margin-left: 40px;
-	padding-left: 30px;
-	background-color: rgba(255, 255, 255, .5);
-	position: absolute;
-	overflow: auto;
-}
-.commentcontainer {
-	// display: none;
-	display: flex;
-	z-index: 10;
-	width: 595px;
-	height: 215px;
-	margin-top: 380px;
-	margin-left: 60px;
-	background-image: image-url('bkg_comment.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	position: absolute;
-}
-#commentin {
-	width: 520px;
-	height: 140px;
-	margin-top: 60px;
-	margin-left: 40px;
-	background-color: rgba(255, 255, 255, .5);
-	overflow: auto;
-	position: absolute;
-}
-
 .optics {
+	display: none;
 	z-index: 7;
-	width: 667px;
-	height: 667px;
+	width: 500px;
+	height: 500px;
 	position: absolute;
-	margin-top: -50px;
-	margin-left: 30px;
+	margin-top: 30px;
+	margin-left: 110px;
 }
 .opticturn {
-	width: 667px;
-	height: 667px;
+	width: 500px;
+	height: 500px;
 }
 #ot1 {
 	background-image: image-url('ot1.svg');
@@ -374,8 +349,8 @@ body {
 	width: 120px;
 	height: 120px;
 	position: absolute;
-	margin-top: 540px;
-	margin-left: 545px;
+	margin-top: 260px;
+	margin-left: 745px;
 	background-image: image-url('planet.svg');
 	background-repeat:no-repeat;
 	background-position: center;

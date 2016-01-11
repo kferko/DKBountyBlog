@@ -1,17 +1,30 @@
-<div class="signupTitleContainer">
-	<%= content_tag :h1, "Think you have what it takes?"%>
-	<%= content_tag :h3, "Hunter be hunted. Sign Up." %>
-</div>
-<div class="signupContainer">
-	<%= form_for @user do |f| %>
-	<%= f.label :username %>
-	<%= f.text_field :username, :placeholder => "username", :class => "signupField" %>
-	<%= f.label :email %>
-	<%= f.text_field :email, :placeholder => "email", :class => "signupField" %>
-	<%= f.label :password %>
-	<%= f.password_field :password, :class => "signupField" %>
-	<%= f.label :confirm_password %>
-	<%= f.password_field :password_confirmation, :class => "signupField"  %>
-	<%= f.submit :create, :class => "signupButton" %>
-	<% end %>
+<div class="window">
+	<div class="userdisplaycontainer">
+		<div id="userdisplayin">
+			<%= content_tag :h1, "Think you have what it takes?" %>
+			<%= content_tag :h3, "Hunter be hunted. Sign Up." %>
+
+			<%= form_for @user do |f| %>
+			<%= f.label :username %>
+			<%= f.text_field :username %>
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+			<%= f.label :confirm_password %>
+			<%= f.password_field :password_confirmation %>
+			<%= f.submit :create %>
+			<% end %>
+		</div>
+	</div>
+	<div class="planet"></div>
+	<div class="locate">
+		<div class="lm1 locateturn" id="lt1"></div>
+	</div>
+	<div class="optics">
+		<div class="cm1 opticturn" id="ot1"></div>
+		<div class="cm2 opticturn" id="ot2"></div>
+		<div class="cm3 opticturn" id="ot3"></div>
+		<div class="cm4 opticturn" id="ot4"></div>
+	</div>
 </div>

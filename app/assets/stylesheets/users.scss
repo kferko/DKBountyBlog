@@ -1,41 +1,30 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// below is the styling for the signup page and containers.
-.signupContainer {
-	display: flex;
-	width: 700px;
-	height: 300px;
-	// margin-top: 380px;
-	// margin-left: 60px;
-	background-image: image-url('bkg_comment.png');
-	background-repeat: no-repeat;
+
+
+.userdisplaycontainer {
+	display: none;
+	// display: flex;
+	z-index: 9;
+	width: 660px;
+	height: 390px;
+	margin-top: 80px;
+	background-image: image-url('users_bkg.svg');
+	background-repeat:no-repeat;
 	background-position: center;
+	margin-bottom: 30px;
 	position: absolute;
-	left: 35%;
-	top: 35%;
-
-	
-
 }
-
-.signupContainer form {
-	position: relative;
-	// float: left;
-	// display: block;
-	top: 30%;
-	left: 20%;
-}
-
-.signupContainer form label{
-	display: block;
-}
-
-.signupTitleContainer {
+#userdisplayin {
+	// display: flex;
+	z-index: 9;
+	width: 570px;
+	height: 330px;
+	margin-top: 25px;
+	margin-left: 30px;
+	padding-left: 30px;
+	background-color: rgba(255, 255, 255, .5);
 	position: absolute;
-	top: 20%;
-	left: 45%;
-	text-align: center;
+	overflow: auto;
 }
-
-

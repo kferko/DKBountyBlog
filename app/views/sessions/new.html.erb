@@ -1,12 +1,10 @@
-	<div class="signinTitle">
-		<%= content_tag :h1, "Please login" %>
-	</div>
-	<div class="signinContainer">
-		 <%= form_tag("/login", method: "post") do %>  
-	     <%=label_tag(:username, "username:") %>   
-	     <%=text_field_tag(:username) %>
-	     <%=label_tag(:password, "password:") %>   
-	     <%=password_field_tag(:password) %>   
-		 <%=submit_tag("Submit") %> 
-	     <% end %>
-	</div>     
+<%= content_tag :h1, "Please login" %>
+
+    <%= form_tag("/login", method: "post") do %>  
+     <%=label_tag(:username, "username:") %>   
+     <%=text_field_tag(:username) %>
+     <%=label_tag(:password, "password:") %>   
+     <%=password_field_tag(:password) %>   
+
+     <%=submit_tag("Submit") %> 
+     <% end %>

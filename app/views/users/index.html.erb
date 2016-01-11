@@ -1,8 +1,22 @@
-		<%= content_tag :h1, "This is the user page." %>
-		<%= content_tag :h3, "This is a list of all users" %>
-		<% @users.each do |user| %>
-		<%= link_to(user.username, user_path(user.id), method: :get) %>
-		<%= user.email %>
-
-		<br>
-		<% end %>
+			<div class="window">
+				<div class="userdisplaycontainer">
+					<div id="userdisplayin">
+						<%= content_tag :h1, "This is the user page." %>
+							<%= content_tag :h3, "This is a list of all users" %>
+							<% @users.each do |user| %>
+							<%= link_to(user.username, user_path(user.id), method: :get) %>
+							<%= user.email %>
+						<% end %>
+					</div>
+				</div>
+				<div class="planet"></div>
+				<div class="locate">
+					<div class="lm1 locateturn" id="lt1"></div>
+				</div>
+				<div class="optics">
+					<div class="cm1 opticturn" id="ot1"></div>
+					<div class="cm2 opticturn" id="ot2"></div>
+					<div class="cm3 opticturn" id="ot3"></div>
+					<div class="cm4 opticturn" id="ot4"></div>
+				</div>
+			</div>
