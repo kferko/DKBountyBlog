@@ -57,16 +57,52 @@ window.onload = function () {
 //   localStorage.setItem('first','nope!');
 // }
 
-// $('a').click(function (e) {
+// $('#linkc a').click(function (e) {
 //     e.preventDefault();                   // prevent default anchor behavior
 //     var goTo = this.getAttribute("href"); // store anchor href
-
-//     // do something while timeOut ticks ... 
-
+//     $(".postcontainer").delay(2000).fadeOut(500);
+//     $(".commentaddition").delay(2000).fadeOut(500);
+//     $(".commentcontainer").delay(2000).fadeOut(500);
+//     $(".userdisplaycontainer").delay(2000).fadeOut(500);
+//     // setTimeout(function(){
+//     //   $(".cm1").toggleClass("ot5-anim");
+//     //   $(".cm2").toggleClass("ot6-anim");
+//     //   $(".cm3").toggleClass("ot7-anim");
+//     //   $(".cm4").toggleClass("ot8-anim");
+//     //  }, 1200);
+//       $(".optics").delay(1500).fadeOut(500);
+//       $(".hovertop").delay(1800).fadeOut(500);
+//       $(".hoverbottom").delay(1800).fadeOut(500);
+//       $(".lightup").delay(2000).fadeOut(500);
 //     setTimeout(function(){
 //          window.location = goTo;
-//     },3000);       
+//     },5000);       
 // }); 
+
+
+$('a').click(function(e) {
+  e.preventDefault();
+  var destination = $(this).attr('href');
+      $(".postcontainer").delay(2000).fadeOut(500);
+      $(".commentaddition").delay(2000).fadeOut(500);
+      $(".commentcontainer").delay(2000).fadeOut(500);
+  setTimeout(function() { window.location.href = destination; }, 6000);
+});
+
+// $('a').click(function (e) { 
+//     e.preventDefault();
+//     var goTo = this.getAttribute("href");
+
+//       $(".postcontainer").fadeOut(1000);
+//       $(".commentaddition").fadeOut(1000);
+//       $(".commentcontainer").fadeOut(1000);
+  
+//     setTimeout(function(){
+//          window.location = goTo;
+//     },3000);
+   
+// });
+
 
 
 var y = 0;
@@ -141,7 +177,3 @@ $(function() {
 });
 });
 });
-// $("#img1").on('click', function() {
-//    $("#div1").fadeIn();
-//    $("#div2,#div3,#div4").fadeOut();
-// });
