@@ -6,9 +6,6 @@
 			<%= content_tag :h3, "Avatar:" %>
 			<%= image_tag @user.profile.avatar_url(:thumb).to_s %>
 			<%= content_tag :h3, "email:" %><%= @user.email %>
-
-			<%= content_tag :h1, "Welcome to your profile hunter." %>
-			<%= content_tag :h1, "Welcome to your profile hunter." %>
 			<% if @user.profile != nil %>
 			<%= content_tag :h3, "Name or Designation:" %><%= @user.profile.name %>
 			<%= content_tag :h3, "Ship:" %><%= @user.profile.ship %>
@@ -23,8 +20,8 @@
 				<% else %>
 				<%= link_to("Create Profile", new_profile_path, method: :get) %>
 				<% end %>
-			<% end %>	
-			<%= link_to("Delete User", user_path(@user.id), method: :delete) %>
+				<%= link_to("Delete User", user_path(@user.id), method: :delete) %>
+			<% end %>
 		</div>
 	</div>
 	<div class="planet"></div>
