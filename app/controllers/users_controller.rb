@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+  # we may not need this. It might not be doing anything. Testing later.
   before_action :authenticate_user, only: [:edit, :update, :destroy]  
 
   def index
@@ -32,13 +32,15 @@ class UsersController < ApplicationController
   def destroy
   	# Setting @user variable to the user.find for this id.
   	@user = User.find(params[:id])
-  	puts "DESTROYING USER *************"
+  	# puts "DESTROYING USER *************"
+    # note to self testing in console.
     if current_user
         if current_user.id == @user.id
            @user.destroy
            redirect_to login_path
            flash[:alert] = "Your Account Has Been Deleted."
            session[:user_id] = nil
+           # making sure to sign user out after destroying
         else
           redirect_to :back
           flash[:alert] = "Nice Try Buddy. Not your account to delete"
@@ -60,7 +62,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :avatar)
   end
 
 end 

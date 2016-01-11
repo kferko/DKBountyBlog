@@ -24,9 +24,10 @@ class PostsController < ApplicationController
   	@post = Post.new(post_params)
   	@user = current_user
     if current_user
-
+      # making sure that the user is signed in so it doesn't crash when clicked.
     	if @post.save 
     		@user.posts.push @post
+        # pushing the current usesr_id into the post params.
     		redirect_to posts_path
     		flash[:notice] = "Awesome New Post."
     	else
@@ -48,6 +49,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if current_user
         if current_user.id == @post.user_id
+          # making sure current_user_id matches the user_id on the post.
            @post.update(post_params)
            redirect_to @post
            flash[:notice] = "Post Updated!"

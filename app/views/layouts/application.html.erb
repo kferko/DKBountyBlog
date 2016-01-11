@@ -8,62 +8,49 @@
 </head>
 <body>
 	<div class="container">
-		<div class="menucontainer">
-			<div id="menuin">
-				<ul>
-				<div class="menubar">menu item goes here</div>
-				<div class="menubar">menu item goes here</div>
-				<div class="menubar">menu item goes here</div>
-				<div class="menubar">menu item goes here</div>
-				</ul>
+		<a href='/'><div class="logo"></div></a>
+		<div class="loginout">
+				    <%= form_tag("/login", method: "post") do %>  
+				     <%=label_tag(:username, "username:") %>   
+				     <%=text_field_tag(:username) %>
+				     <br>
+				     <%=label_tag(:password, "password:") %>   
+				     <%=password_field_tag(:password) %> 
+				     <br>  
+				     <%=submit_tag("Submit") %> 
+			    <% end %>
+				<% if session[:user_id] %>
+					<%= content_tag :h4, "Logged in" %>
+					<%= link_to("Log Out", '/logout', method: :delete) %>
+					<% else %>
+					<%= content_tag :h4, "Not logged in" %>
+					<% end %>
+					<%= flash[:notice] if flash[:notice]%>
+					<%= flash[:alert] if flash[:alert] %>
+		</div>
+		<div class="hovertop"></div>
+		<div class="hoverbottom"></div>
+		<div class="menu_new">
+			<div class="menubox">
+				<a href='/posts'><div id="linkc">posts</div></a>
+			</div>
+			<div class="menubox">
+				<a href='/users'><div id="linkc">users</div></a>
+			</div>
+			<div class="menubox">
+				<a href='/users/new'><div id="linkc">become a user</div></a>
+			</div>
+			<div class="menubox">
+				<div id="linkc">linklink</div>
 			</div>
 		</div>
 		<div class="sitename">
-			title of blog goes here
+			<h1>Justice Junction</h1>
 		</div>
 		<div class="content">
-			<div class="usercontainer">
-				<div class="userin">
-					list of username goes here
-					<br><br>
-					hide the div so when users is clicked in the menu, the div appears
-					<br><br>
-					clicking a user name shows a list of their posts
-				</div>
-			</div>
-			<div class="window">
-				<div class="postcontainer">
-					<div id="posttitle">
-					title
-					</div>
-					<div id="postdetails">
-					poster and date
-					</div>
-					<div id="postin">
-						<%= yield %>
-					</div>
-				</div>
-				<div class="commentcontainer">
-					<div id="commentin">
-					</div>
-				</div>
-			</div>
+		<%= yield %>
 		</div>
+		<div class="lightup"></div>
 	</div>
-
-	<!-- <% if session[:user_id] %> -->
-	<!-- <%= content_tag :h4, "Logged in" %> -->
-	<!-- <% else %> -->
-	<!-- <%= content_tag :h4, "Not logged in" %> -->
-	<!-- <% end %> -->
-	<!-- <%= link_to("Log Out", '/logout', method: :delete) %> -->
-	<!-- <%= link_to("Log In", '/login', method: :create) %> -->
-	<!-- <%= link_to("All Posts", '/posts', method: :get) %> -->
-	<!-- <%= link_to("New Post", '/posts/new', method: :get) %> -->
-	<!-- <%= flash[:notice] if flash[:notice]%> -->
-	<!-- <%= flash[:alert] if flash[:alert] %> -->
-
-
-
 </body>
 </html>

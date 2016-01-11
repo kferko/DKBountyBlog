@@ -1,10 +1,23 @@
-<%= content_tag :h1, "Welcome to your profile hunter." %>
-<%= content_tag :h3, "Name or Designation:" %><%= @user.profile.name %>
-<%= content_tag :h3, "Ship:" %><%= @user.profile.ship %>
-<%= content_tag :h3, "Home Planet:" %><%= @user.profle.planet %>
-<%= content_tag :h3, "Weapon of Choice:" %><%= @user.profile.weapon %>
-<%= content_tag :h3, "Side:" %><%= @user.profle.side %>
-<%= link_to("Log Out", '/logout') %>
-
-<br>
-
+<div class="window">
+	<div class="userdisplaycontainer">
+		<div id="userdisplayin">
+			<%= content_tag :h1, "Welcome to your profile hunter." %>
+			<%= content_tag :h3, "Name or Designation:" %><%= @user.profile.name %>
+			<%= content_tag :h3, "Ship:" %><%= @user.profile.ship %>
+			<%= content_tag :h3, "Home Planet:" %><%= @user.profle.planet %>
+			<%= content_tag :h3, "Weapon of Choice:" %><%= @user.profile.weapon %>
+			<%= content_tag :h3, "Side:" %><%= @user.profle.side %>
+			<%= link_to("Log Out", '/logout') %>
+		</div>
+	</div>
+	<div class="planet"></div>
+	<div class="locate">
+		<div class="lm1 locateturn" id="lt1"></div>
+	</div>
+	<div class="optics">
+		<div class="cm1 opticturn" id="ot1"></div>
+		<div class="cm2 opticturn" id="ot2"></div>
+		<div class="cm3 opticturn" id="ot3"></div>
+		<div class="cm4 opticturn" id="ot4"></div>
+	</div>
+</div>
