@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import url(https://fonts.googleapis.com/css?family=Iceberg|Iceland|Orbitron:400,700);
+
 body {
 	width: 100vw;
 	height: 100vh;
@@ -37,6 +39,25 @@ body {
 	background-repeat:no-repeat;
 	background-position: center;
 }
+.alert {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-family: 'Iceland', cursive;
+	font-size: 20px;
+   	border-radius: 8px;
+   	color: rgb(22, 134, 160);
+	text-align: center;
+}
+.alert-success {
+	background-color: rgba(255, 255, 255, .9);
+   	width: 280px;
+   	height: 50px;
+   	// padding-top: 10px;
+   	z-index: 9999;
+}
+
+
 .menu_new {
 	display: flex;
 	width: 100vw;
@@ -58,6 +79,41 @@ body {
 	background-position: center;
 	cursor: crosshair;
 }
+.menubox a:link {
+	font-family: 'Iceland', cursive;
+	font-size: 18px;
+	color: rgba(255, 255, 255, .9);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+#userdisplayin h1 {
+	font-family: 'Iceberg', cursive;
+	font-size: 36px;
+	color: rgba(255, 255, 255, .7);
+	letter-spacing: 2px;
+}
+#userdisplayin h3 {
+	font-family: 'Orbitron', sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	color: rgba(255, 255, 255, .7);
+	letter-spacing: 2px;
+	line-height: -6px;
+}
+.post_title_input{
+	width:300px;
+	height:20px;
+	margin-left: 10px;
+}
+.post_body_input{
+	width:300px;
+	height:100px;
+	margin-left: 10px;
+	line-height: 1;
+}
+
+
 #linkc {
 	width: 250px;
 	color: rgba(255, 255, 255, .7);
@@ -84,11 +140,14 @@ body {
 	z-index: 9998;
 	width: 400px;
 	height: 50px;
-	margin-top: 20px;
+	margin-top: 10px;
     margin-left: 950px;
 	// background-color: rgb(112, 200, 255);
 	text-align: right;
 	line-height: 24px;
+	font-family: 'Iceland', cursive;
+	font-size: 14px;
+	color: rgba(255, 255, 255, .9);
 }
 .sitename {
 	display: flex;
@@ -97,10 +156,18 @@ body {
 	height: 60px;
 	top: 0;
 	margin-bottom: 40px;
-	margin-left: 650px;
+	margin-left: 480px;
 	text-align: left;
-	padding-top:20px;
+	padding-top:10px;
 	position: fixed;
+}
+.sitename h1 {
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 700;
+	font-size: 40px;
+	color: rgba(255, 255, 255, .9);
+	letter-spacing: 8px;
+	text-shadow: 1px 1px 3px rgba(150, 150, 150, 1);
 }
 
 .lightup {
