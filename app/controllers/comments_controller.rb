@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def index
     @comment = Comments.all
+    # make all comments visible on the comments index.
   end
 
   def show
