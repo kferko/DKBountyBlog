@@ -1,13 +1,13 @@
 <div class="window">
 	<div class="posthomedc">
 		<div id="phdisplayin">
-			<%= content_tag :h1, "These are the posts." %>
+			<%= content_tag :h1, "THE HUNT OR THE HUNTED..." %>
 				<!-- Below will take all posts and display them and the information associated. -->
 				<% @posts.each do |post| %>
 				<%= content_tag :h4, "Post Title."; link_to post.title, post_path(post.id)%>
 				<br>
-								<%= post.body %> 
-								<br>
+				<%= post.body %> 
+				<br>
 				<%= content_tag :h4, "Post Author." ; post.user.username %>
 				<!-- The h4 content is not showing up on either of these. -->
 				<br><br>

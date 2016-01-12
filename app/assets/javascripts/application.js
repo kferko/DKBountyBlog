@@ -37,11 +37,10 @@
 
 if (top.location.pathname != '/'){
       window.onload = function () {
-          $(".lightup").show();
+          // $(".lightup").show();
           $(".hovertop").show();
           $(".hoverbottom").show();
           $(".optics").show();
-          // $(".cm1").delay(5300).addClass("ot1-anim");
           setTimeout(function(){
             $(".cm1").toggleClass("ot5-anim");
             $(".cm2").toggleClass("ot6-anim");
@@ -53,6 +52,22 @@ if (top.location.pathname != '/'){
           $(".userdisplaycontainer").delay(1200).fadeIn(1000);
           $(".commentaddition").delay(1400).fadeIn(1000);
           $(".commentcontainer").delay(1400).fadeIn(1000);
+      }
+}
+
+if (top.location.pathname == '/'){
+      window.onload = function () {
+          // $(".lightup").delay(1200).fadeIn(1000);
+          $(".hovertop").delay(1200).fadeIn(1000);
+          $(".hoverbottom").delay(1200).fadeIn(1000);
+          $(".optics").delay(2200).fadeIn(1000);
+          setTimeout(function(){
+            $(".cm1").toggleClass("ot5-anim");
+            $(".cm2").toggleClass("ot6-anim");
+            $(".cm3").toggleClass("ot7-anim");
+            $(".cm4").toggleClass("ot8-anim");
+           }, 2600);
+          $(".homecontainer").delay(3600).fadeIn(1000);
       }
 }
 

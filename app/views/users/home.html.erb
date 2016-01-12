@@ -1,13 +1,22 @@
-			<div class="window">
-	
-				<div class="planet"></div>
-				<div class="locate">
-					<div class="lm1 locateturn" id="lt1"></div>
-				</div>
-				<div class="optics">
-					<div class="cm1 opticturn" id="ot1"></div>
-					<div class="cm2 opticturn" id="ot2"></div>
-					<div class="cm3 opticturn" id="ot3"></div>
-					<div class="cm4 opticturn" id="ot4"></div>
-				</div>
+<div class="window">
+	<div class="homecontainer">
+		<div id="homein">
+			<div id="hometitle"><h1>WELCOME HUNTERS</h1></div>
+			<div id="homelinks">
+			<h2><%= link_to("JOIN THE HUNT", new_user_path, method: :get) %></h2>
+			<h2><%= link_to("POSTS", posts_path, method: :get) %></h2>
 			</div>
+		</div>
+	</div>
+	
+	<div class="planet"></div>
+	<div class="locate">
+		<div class="lm1 locateturn" id="lt1"></div>
+	</div>
+	<div class="optics">
+		<div class="cm1 opticturn" id="ot1"></div>
+		<div class="cm2 opticturn" id="ot2"></div>
+		<div class="cm3 opticturn" id="ot3"></div>			
+		<div class="cm4 opticturn" id="ot4"></div>
+	</div>
+</div>
