@@ -1,30 +1,61 @@
+<div class="window">
+	<div class="postcontainer">
+		<div id="posttitle">
+			<%=content_tag :h2, "Post Title" %>
+			<%= @posts.title %>
+			<% end %>
+		</div>
+					<div id="postdetails">
+						<%=content_tag :h2, "Post Author" %>
+						<%= @posts.user.username %>
+						<% end %>
+					</div>
+					<div id="postin">
+						<%=content_tag :h2, "Post Image" %>
+						<%= image_tag @posts.image_url(:thumb).to_s %>
+						<%=content_tag :h2, "Post Body" %>
+						<%= @posts.body %>
+						<%= link_to("Delete Post", @posts, method: :delete) %>
+						<%= link_to("Edit Post", edit_post_path, method: :get) %>
+						<% end %>
+					</div>
+				</div>
+				<div class="commentaddition">
+					<div id="commentaddin">
+					<%= content_tag :h3, "Make a Comment." %>
+					<%= form_for @comment do |f| %>
+					<%= f.label :title %>
+					<%= f.text_field :title %>
+					<%= f.label :body %>
+					<%= f.text_field :body %>
+					<%= f.hidden_field :post_id, :value => @posts.id %>
+					<%= f.submit :create %>
+					<% end %>
+					</div>
+				</div>
+				<div class="commentcontainer">
+					<div id="commentin">
+						<% @posts.comments.each do |comment| %>
+						<%= content_tag :h3, "Comment Title."%>
+						<%= comment.title %>
+						<%= content_tag :h3, "Comment Body." %>
+						<%= comment.body %>
+						<%= content_tag :h3, " Comment Author." %>
+						<%= comment.user.username %>
+						<%= link_to("Delete comment", comment_path(comment.id), method: :delete) %>
+						<% end %>
+					</div>
+				</div>
+				<div class="planet"></div>
+				<div class="locate">
+					<div class="lm1 locateturn" id="lt1"></div>
+				</div>
+				<div class="optics">
+					<div class="cm1 opticturn" id="ot1"></div>
+					<div class="cm2 opticturn" id="ot2"></div>
+					<div class="cm3 opticturn" id="ot3"></div>
+					<div class="cm4 opticturn" id="ot4"></div>
+				</div>
+			</div>
 
-<%=content_tag :h2, "Post Title" %>
-<%= @posts.title %>
-<%=content_tag :h2, "Post Body" %>
-<%= @posts.body %>
-<%=content_tag :h2, "Post Author" %>
-<%= @posts.user.username %>
-<%=content_tag :h2, "Post Image" %>
-<%= image_tag @posts.image_url(:thumb).to_s %>
-<%= link_to("Delete Post", @posts, method: :delete) %>
-<%= link_to("Edit Post", edit_post_path, method: :get) %>
 
-<% @posts.comments.each do |comment| %>
-	<%= content_tag :h3, "Comment Title."%>
-	<%= comment.title %>
-	<%= content_tag :h3, "Comment Body." %>
-	<%= comment.body %>
-	<%= content_tag :h3, " Comment Author." %>
-	<%= comment.user.username %>
-	<%= link_to("Delete comment", comment_path(comment.id), method: :delete) %>
-	<% end %>
-<%= content_tag :h3, "Make a Comment." %>
-<%= form_for @comment do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<%= f.label :body %>
-<%= f.text_field :body %>
-<%= f.hidden_field :post_id, :value => @posts.id %>
-<%= f.submit :create %>
-<% end %>

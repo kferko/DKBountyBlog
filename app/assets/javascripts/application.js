@@ -14,72 +14,67 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+if (top.location.pathname === '/'){
+      window.onload = function () {
+          $(".lightup").delay(1000).fadeIn(300);
+          $(".hovertop").delay(1600).fadeIn(500);
+          $(".hoverbottom").delay(1600).fadeIn(500);
+          $(".optics").delay(2000).fadeIn(500);
+          // $(".cm1").delay(5300).addClass("ot1-anim");
+          setTimeout(function(){
+            $(".cm1").toggleClass("ot1-anim");
+            $(".cm2").toggleClass("ot2-anim");
+            $(".cm3").toggleClass("ot3-anim");
+            $(".cm4").toggleClass("ot4-anim");
+           }, 3000);
+          $(".postcontainer").delay(4000).fadeIn(1000);
+          $(".userdisplaycontainer").delay(4000).fadeIn(1000);
+          $(".commentaddition").delay(4300).fadeIn(500);
+          $(".commentcontainer").delay(4300).fadeIn(500);
+      }
+}
 
-// window.onload = function () {
-//     if (localStorage.get("hasCodeRunBefore") === null) {
-//             $(function() {
-//                   $(".lightup").delay(1000).fadeIn(300);
-//                   // $(".postcontainer,.commentcontainer,.userin,.userlist").fadeOut(1000);
-//                 });
-//         localStorage.setItem("hasCodeRunBefore", true);
-//     }
-// }
-
-window.onload = function () {
-    $(".lightup").delay(1000).fadeIn(300);
-    $(".hovertop").delay(1600).fadeIn(500);
-    $(".hoverbottom").delay(1600).fadeIn(500);
-    $(".optics").delay(3200).fadeIn(500);
-    // $(".cm1").delay(5300).addClass("ot1-anim");
-    setTimeout(function(){
-      $(".cm1").toggleClass("ot1-anim");
-      $(".cm2").toggleClass("ot2-anim");
-      $(".cm3").toggleClass("ot3-anim");
-      $(".cm4").toggleClass("ot4-anim");
-     }, 4000);
-    $(".postcontainer").delay(6200).fadeIn(1000);
-    $(".commentaddition").delay(6600).fadeIn(500);
-    $(".commentcontainer").delay(6900).fadeIn(500);
-    $(".userdisplaycontainer").delay(6200).fadeIn(1000);
+if (top.location.pathname != '/'){
+      window.onload = function () {
+          $(".lightup").show();
+          $(".hovertop").show();
+          $(".hoverbottom").show();
+          $(".optics").show();
+          // $(".cm1").delay(5300).addClass("ot1-anim");
+          setTimeout(function(){
+            $(".cm1").toggleClass("ot5-anim");
+            $(".cm2").toggleClass("ot6-anim");
+            $(".cm3").toggleClass("ot7-anim");
+            $(".cm4").toggleClass("ot8-anim");
+           }, 1000);
+          $(".postcontainer").delay(1200).fadeIn(1000);
+          $(".userdisplaycontainer").delay(1200).fadeIn(1000);
+          $(".commentaddition").delay(1400).fadeIn(500);
+          $(".commentcontainer").delay(1400).fadeIn(500);
+      }
 }
 
 
-// function toBeExecutedOnFirstLoad(){
-//   $(function() {
+
+// window.onload = function () {
 //     $(".lightup").delay(1000).fadeIn(300);
-//     $(".hovertop").delay(1100).fadeIn(300);
-//     $(".hoverbottom").delay(1100).fadeIn(300);
-//     // $(".postcontainer,.commentcontainer,.userin,.userlist").fadeOut(1000);
-//   });
-// }
-// if(localStorage.getItem('first') === null){
-//   toBeExecutedOnFirstLoad();
-//   localStorage.setItem('first','nope!');
-// }
-
-// $('#linkc a').click(function (e) {
-//     e.preventDefault();                   // prevent default anchor behavior
-//     var goTo = this.getAttribute("href"); // store anchor href
-//     $(".postcontainer").delay(2000).fadeOut(500);
-//     $(".commentaddition").delay(2000).fadeOut(500);
-//     $(".commentcontainer").delay(2000).fadeOut(500);
-//     $(".userdisplaycontainer").delay(2000).fadeOut(500);
-//     // setTimeout(function(){
-//     //   $(".cm1").toggleClass("ot5-anim");
-//     //   $(".cm2").toggleClass("ot6-anim");
-//     //   $(".cm3").toggleClass("ot7-anim");
-//     //   $(".cm4").toggleClass("ot8-anim");
-//     //  }, 1200);
-//       $(".optics").delay(1500).fadeOut(500);
-//       $(".hovertop").delay(1800).fadeOut(500);
-//       $(".hoverbottom").delay(1800).fadeOut(500);
-//       $(".lightup").delay(2000).fadeOut(500);
+//     $(".hovertop").delay(1600).fadeIn(500);
+//     $(".hoverbottom").delay(1600).fadeIn(500);
+//     $(".optics").delay(2000).fadeIn(500);
+//     // $(".cm1").delay(5300).addClass("ot1-anim");
 //     setTimeout(function(){
-//          window.location = goTo;
-//     },5000);       
-// }); 
+//       $(".cm1").toggleClass("ot1-anim");
+//       $(".cm2").toggleClass("ot2-anim");
+//       $(".cm3").toggleClass("ot3-anim");
+//       $(".cm4").toggleClass("ot4-anim");
+//      }, 3000);
+//     $(".postcontainer").delay(4000).fadeIn(1000);
+//     $(".userdisplaycontainer").delay(4000).fadeIn(1000);
+//     $(".commentaddition").delay(4300).fadeIn(500);
+//     $(".commentcontainer").delay(4300).fadeIn(500);
+// }
 
-
+// this is intended to reverse the intro animation on a click event - mainly a click of the menuing
 $('a').click(function(e) {
   e.preventDefault();
   var destination = $(this).attr('href');
@@ -88,20 +83,6 @@ $('a').click(function(e) {
       $(".commentcontainer").delay(2000).fadeOut(500);
   setTimeout(function() { window.location.href = destination; }, 6000);
 });
-
-// $('a').click(function (e) { 
-//     e.preventDefault();
-//     var goTo = this.getAttribute("href");
-
-//       $(".postcontainer").fadeOut(1000);
-//       $(".commentaddition").fadeOut(1000);
-//       $(".commentcontainer").fadeOut(1000);
-  
-//     setTimeout(function(){
-//          window.location = goTo;
-//     },3000);
-   
-// });
 
 
 
