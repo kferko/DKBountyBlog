@@ -25,23 +25,27 @@
 					<% else %>
 					<%= content_tag :h4, "Not logged in" %>
 				<% end %>
-					<%= flash[:notice] if flash[:notice]%>
-					<%= flash[:alert] if flash[:alert] %>
+				<% if flash[:notice] -%>
+  				<div class = "alert alert-success"><%= flash[:notice] %></div>
+				<% end %>
+				<% if flash[:alert] -%>
+  				<div class = "alert alert-success"><%= flash[:alert] %></div>
+				<% end %>
 		</div>
 		<div class="hovertop"></div>
 		<div class="hoverbottom"></div>
 		<div class="menu_new">
 			<div class="menubox">
-				<a href='/posts'><div id="linkc">posts</div></a>
+				<a href='/posts'><div id="linkc">POSTS</div></a>
 			</div>
 			<div class="menubox">
-				<a href='/users'><div id="linkc">users</div></a>
+				<a href='/users'><div id="linkc">HUNTERS</div></a>
 			</div>
 			<div class="menubox">
-				<a href='/users/new'><div id="linkc">become a user</div></a>
+				<a href='/users/new'><div id="linkc">BECOME A HUNTER</div></a>
 			</div>
 			<div class="menubox">
-				<div id="linkc"><%= link_to("New Post", new_post_path, method: :get) %></div>
+				<div id="linkc"><%= link_to("NEW POST", new_post_path, method: :get) %></div>
 			</div>
 		</div>
 		<div class="sitename">

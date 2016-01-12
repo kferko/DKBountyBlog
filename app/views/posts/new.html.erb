@@ -6,11 +6,17 @@
 
 			<%= form_for @post, :html => {:multipart => true} do |f| %>
 			<%= f.label :title %>
-			<%= f.text_field :title %>
+			<%= f.text_field :title, :class => "post_title_input" %>
+			<br>
+			<br>
 			<%= f.label :body %>
-			<%= f.text_field :body %>
+			<%= f.text_field :body, :class => "post_body_input" %>
+			<br>
+			<br>
 			<%= f.label :body %>
 			<%= f.file_field :image %>
+			<br>
+			<br>
 			<%= f.submit :create %>
 			<% end %>
 		</div>
