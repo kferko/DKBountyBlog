@@ -1,40 +1,28 @@
-			<div class="window">
-				<div class="postcontainer">
-					<div id="posttitle">
-						<% @posts.each do |post| %>
-						<%= content_tag :h4, "Post Title." ; link_to post.title, post_path(post.id)%>
-						<% end %>
-					</div>
-					<div id="postdetails">
-						<% @posts.each do |post| %>
-						<%= content_tag :h4, "Post Author." ; post.user.username %>
-						<% end %>
-					</div>
-					<div id="postin">
-						<%= content_tag :h1, "These are the posts." %>
-							<% @posts.each do |post| %>
-							<%= content_tag :h4, "Post Body."%>
-							<%= post.body %>
-							<%= link_to("Delete Post", post_path(post.id), method: :delete) %>
-							<% end %>
-					</div>
-				</div>
-				<div class="commentaddition">
-					<div id="commentaddin">
-					</div>
-				</div>
-				<div class="commentcontainer">
-					<div id="commentin">
-					</div>
-				</div>
-				<div class="planet"></div>
-				<div class="locate">
-					<div class="lm1 locateturn" id="lt1"></div>
-				</div>
-				<div class="optics">
-					<div class="cm1 opticturn" id="ot1"></div>
-					<div class="cm2 opticturn" id="ot2"></div>
-					<div class="cm3 opticturn" id="ot3"></div>
-					<div class="cm4 opticturn" id="ot4"></div>
-				</div>
-			</div>
+<div class="window">
+	<div class="userdisplaycontainer">
+		<div id="userdisplayin">
+			<%= content_tag :h1, "These are the posts." %>
+				<% @posts.each do |post| %>
+				<%= content_tag :h4, "Post Body."%>
+				<%= post.body %>
+				<% @posts.each do |post| %>
+				<%= content_tag :h4, "Post Title." ; link_to post.title, post_path(post.id)%>
+				<% end %>
+				<% @posts.each do |post| %>
+				<%= content_tag :h4, "Post Author." ; post.user.username %>
+				<% end %>
+				<%= link_to("Delete Post", post_path(post.id), method: :delete) %>
+			<% end %>
+		</div>
+	</div>
+	<div class="planet"></div>
+	<div class="locate">
+		<div class="lm1 locateturn" id="lt1"></div>
+	</div>
+	<div class="optics">
+		<div class="cm1 opticturn" id="ot1"></div>
+		<div class="cm2 opticturn" id="ot2"></div>
+		<div class="cm3 opticturn" id="ot3"></div>
+		<div class="cm4 opticturn" id="ot4"></div>
+	</div>
+</div>
