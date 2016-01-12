@@ -1,7 +1,7 @@
 <div class="window">
 	<div class="posthomedc">
 		<div id="phdisplayin">
-			<%= content_tag :h1, "These are the posts." %>
+			<%= content_tag :h1, "THE HUNT OR THE HUNTED..." %>
 				<!-- Below will take all posts and display them and the information associated. -->
 				<% @posts.each do |post| %>
 				<%= link_to(post.title, post_path(post.id), method: :get) %>
@@ -10,7 +10,9 @@
 				<br>
 				<%= post.body %> 
 				<br>
+
 				<%= post.user.username %>
+
 				<!-- The h4 content is not showing up on either of these. -->
 				<br><br>
 				<% end %>
