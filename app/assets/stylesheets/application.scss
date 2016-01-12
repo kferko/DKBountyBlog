@@ -164,12 +164,17 @@ body {
 	height: 50px;
 	margin-top: 10px;
     margin-left: 950px;
-	// background-color: rgb(112, 200, 255);
 	text-align: right;
 	line-height: 24px;
 	font-family: 'Iceland', cursive;
-	font-size: 14px;
+	font-size: 18px;
 	color: rgba(255, 255, 255, .9);
+}
+.loginout a {
+	font-family: 'Iceland', cursive;
+	font-size: 18px;
+	color: rgba(255, 255, 255, .9);
+	text-decoration: none;
 }
 .sitename {
 	display: flex;
