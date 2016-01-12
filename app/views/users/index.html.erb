@@ -1,11 +1,13 @@
 			<div class="window">
 				<div class="userdisplaycontainer">
 					<div id="userdisplayin">
-						<%= content_tag :h1, "This is the user page." %>
+						<%= content_tag :h1, "Know your Hunters" %>
 							<%= content_tag :h3, "This is a list of all users" %>
 							<% @users.each do |user| %>
 							<%= link_to(user.username, user_path(user.id), method: :get) %>
 							<%= user.email %>
+							<br>
+							<br>
 						<% end %>
 					</div>
 				</div>
