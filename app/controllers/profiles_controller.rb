@@ -20,18 +20,18 @@ class ProfilesController < ApplicationController
   	@profile = Profile.new(profile_params)
     # passes strong params thorugh new profile.
     @user = current_user
-    @profile.user_id = session[:user_id]
       
       if @profile.save
-        	current_user
+        current_user
+        @profile.user_id = session[:user_id]
+        @profile.save
+        # Sets the user_id of the profile to the current_user logged in. And resaves.
     		redirect_to users_path @user
     		flash[:notice] = "New profile has been entered. Welcome to The Syndicate."
     	else
     		redirect_to :back
     		flash[:notice] = "There was a problem creating your profile. Back to the Sarlac Pit."
     	end
-    
-  
   end
 
   def edit
