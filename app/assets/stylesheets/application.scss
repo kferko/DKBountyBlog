@@ -85,7 +85,19 @@ body {
 	color: rgba(255, 255, 255, .9);
     text-decoration: none;
     letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(15, 83, 73, .7);
 }
+
+.menuboxlink {
+	font-family: 'Iceland', cursive;
+	font-size: 18px;
+	color: rgba(255, 255, 255, .9);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(15, 83, 73, .7);
+}
+
+
 
 #userdisplayin h1 {
 	font-family: 'Iceberg', cursive;
@@ -112,6 +124,11 @@ body {
 	margin-left: 10px;
 	line-height: 1;
 }
+.user_input{
+	width:400px;
+	height:20px;
+	margin-left: 10px;
+}
 
 
 #linkc {
@@ -119,7 +136,12 @@ body {
 	color: rgba(255, 255, 255, .7);
 	text-align: center;
 	padding-top: 40px;
-	font-size: 1.2em;
+	font-family: 'Iceland', cursive;
+	font-size: 18px;
+	color: rgba(255, 255, 255, .9);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(15, 83, 73, .7);
 }
 .logo {
 	display: flex;

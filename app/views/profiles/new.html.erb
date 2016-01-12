@@ -1,33 +1,45 @@
-			<div class="window">
-				<div class="userdisplaycontainer">
-					<div id="userdisplayin">
+<div class="window">
+	<div class="userdisplaycontainer">
+		<div id="userdisplayin">
 						<%= content_tag :h1, "Think you have what it takes?" %>
 						<%= content_tag :h3, "Hunter be hunted. Sign Up." %>
 						<%= form_for @profile do |f| %>
 						<%= f.label :name_or_designation %>
 						<%= f.text_field :name %>
+						<br>
+						<br>
 						<%= f.label :ship %>
-						<%= f.text_field :ship %>
+						<%= f.text_field :ship, :class => "user_input" %>
+						<br>
+						<br>
 						<%= f.label :home_planet %>
-						<%= f.text_field :planet %>
+						<%= f.text_field :planet, :class => "user_input" %>
+						<br>
+						<br>
 						<%= f.label :weapon_of_choice %>
-						<%= f.text_field :weapon %>
+						<%= f.text_field :weapon, :class => "user_input" %>
+						<br>
+						<br>
 						<%= f.label :state_a_side %>
-						<%= f.text_field :side %>
+						<%= f.text_field :side, :class => "user_input" %>
+						<br>
+						<br>
 						<%= f.label :avatar %>
 						<%= f.file_field :avatar %>
+						<br>
+						<br>
 						<%= f.submit :create %>
 						<% end %>
-					</div>
-				</div>
-				<div class="planet"></div>
-				<div class="locate">
+		</div>
+	</div>
+	<div class="planet"></div>
+	<div class="locate">
 					<div class="lm1 locateturn" id="lt1"></div>
-				</div>
-				<div class="optics">
+	</div>
+	<div class="optics">
 					<div class="cm1 opticturn" id="ot1"></div>
 					<div class="cm2 opticturn" id="ot2"></div>
 					<div class="cm3 opticturn" id="ot3"></div>
 					<div class="cm4 opticturn" id="ot4"></div>
-				</div>
-			</div>
+	</div>
+</div>
