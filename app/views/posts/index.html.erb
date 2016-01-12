@@ -4,11 +4,13 @@
 			<%= content_tag :h1, "These are the posts." %>
 				<!-- Below will take all posts and display them and the information associated. -->
 				<% @posts.each do |post| %>
-				<%= content_tag :h4, "Post Title."; link_to post.title, post_path(post.id)%>
+				<%= link_to(post.title, post_path(post.id), method: :get) %>
+				<!-- The content tage is not showing up right now but post link is. Needs fix. Same with author below.
+				Changed to a turbo link. Can adjust styling later. -->
 				<br>
-								<%= post.body %> 
-								<br>
-				<%= content_tag :h4, "Post Author." ; post.user.username %>
+				<%= post.body %> 
+				<br>
+				<%= post.user.username %>
 				<!-- The h4 content is not showing up on either of these. -->
 				<br><br>
 				<% end %>
