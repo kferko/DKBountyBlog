@@ -3,18 +3,18 @@
 		<div id="posttitle">
 			<%=content_tag :h2, "Post Title" %>
 			<%= @posts.title %>
-			<% end %>
 		</div>
 					<div id="postdetails">
 						<%=content_tag :h2, "Post Author" %>
 						<%= @posts.user.username %>
-						<% end %>
 					</div>
 					<div id="postin">
 						<%=content_tag :h2, "Post Image" %>
 						<%= image_tag @posts.image_url(:thumb).to_s %>
 						<%=content_tag :h2, "Post Body" %>
 						<%= @posts.body %>
+						<!-- if statement to make sure these links show up only if it is the current user's post -->
+						<% if @posts.user_id == @current_user.id %>
 						<%= link_to("Delete Post", @posts, method: :delete) %>
 						<%= link_to("Edit Post", edit_post_path, method: :get) %>
 						<% end %>
@@ -42,7 +42,10 @@
 						<%= comment.body %>
 						<%= content_tag :h3, " Comment Author." %>
 						<%= comment.user.username %>
-						<%= link_to("Delete comment", comment_path(comment.id), method: :delete) %>
+							<!-- This conditional makes sure only comment author can delete comment -->
+							<% if comment.user_id == @current_user.id %>
+							<%= link_to("Delete comment", comment_path(comment.id), method: :delete) %>
+							<% end %>
 						<% end %>
 					</div>
 				</div>

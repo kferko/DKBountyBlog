@@ -13,7 +13,6 @@
 			<%= content_tag :h3, "Weapon of Choice:" %><%= @user.profile.weapon %>
 			<%= content_tag :h3, "Side:" %><%= @user.profile.side %>
 			<% end %>
-			<%= link_to("Log Out", '/logout') %>
 			<% if @user.id == @current_user_id %>
 				<% if @user.profile != nil %>
 				<%= link_to("Edit Profile", edit_profile_path(@user.profile.id), method: :get) %>

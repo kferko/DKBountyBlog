@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   	@posts = Post.find(params[:id])
     @comment = Comment.new
     @comment_post = Comment.where(params[:post_id])
+    @user = current_user
     puts params
   end
 

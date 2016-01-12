@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 			flash[:notice] = "Successfully logged in!"
 		else
 			flash[:alert] = "There was a problem logging in."
-			redirect_to login_path
+			redirect_to root_path
 		end
 	end
 
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 		# if current_user
 			session[:user_id] = nil
 			flash[:notice] = "You have been logged out."
-			redirect_to login_path
+			redirect_to root_path
 		# else
 		# 	redirect_to root_path
 		# end
