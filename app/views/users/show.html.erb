@@ -3,8 +3,10 @@
 		<div id="userdisplayin">
 			<%= content_tag :h1, "Welcome to your page hunter." %>
 			<%= content_tag :h3, "Username:" %><%= @user.username %>
+			<% if @user.profile %>
 			<%= content_tag :h3, "Avatar:" %>
 			<%= image_tag @user.profile.avatar_url(:thumb).to_s %>
+			<% end %>
 			<%= content_tag :h3, "email:" %><%= @user.email %>
 			<% if @user.profile != nil %>
 			<%= content_tag :h3, "Name or Designation:" %><%= @user.profile.name %>

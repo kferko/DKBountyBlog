@@ -4,14 +4,18 @@ class PostsController < ApplicationController
   def index
 
   	@posts = Post.all
-
+    # Sets @posts to all posts so they can be displayed on the index view.
   end
 
   def show
   	@posts = Post.find(params[:id])
+    # finds specific Post for the current view.
     @comment = Comment.new
+    # Sets @ comment as a new comment
     @comment_post = Comment.where(params[:post_id])
+    # finds the comments with the same post id as the show page of the current post.
     @user = current_user
+
     puts params
   end
 
@@ -23,6 +27,7 @@ class PostsController < ApplicationController
 
   def create
   	@post = Post.new(post_params)
+    # Passes strong params through a new Post.
   	@user = current_user
     if current_user
       # making sure that the user is signed in so it doesn't crash when clicked.
@@ -30,14 +35,17 @@ class PostsController < ApplicationController
     		@user.posts.push @post
         # pushing the current usesr_id into the post params.
     		redirect_to posts_path
+        # redirects to the posts_path and flashes a success notice.
     		flash[:notice] = "Awesome New Post."
     	else
     		flash[:notice] = "Something went wrong when we tried to make your post. Try again."
     		redirect_to root_path
+        # If save fails flashes a fail notice and redirects to the root.
     	end
     else
-      redirect_to posts_path
+      redirect_to :back
       flash[:notice] = "Please Login to make a post."
+      # If no current users alerts them that they need to
     end
 
   end

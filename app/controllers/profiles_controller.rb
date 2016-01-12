@@ -4,10 +4,12 @@ class ProfilesController < ApplicationController
 	def index
 		@profile = Profile.all
     @users = User.all
+    # Sets these two variables so we can display users and their profiles.
 	end
 
 	def show
 		@profile = Profile.find(params[:id])
+    # Finds the correct profile by the profile's id.
 	end
 
 	def new
@@ -16,18 +18,19 @@ class ProfilesController < ApplicationController
 
   def create
   	@profile = Profile.new(profile_params)
+    # passes strong params thorugh new profile.
     @user = current_user
     @profile.user_id = session[:user_id]
-
-    
-    	if @profile.save
+      
+      if @profile.save
         	current_user
-    		redirect_to root_path
+    		redirect_to users_path @user
     		flash[:notice] = "New profile has been entered. Welcome to The Syndicate."
     	else
     		redirect_to :back
     		flash[:notice] = "There was a problem creating your profile. Back to the Sarlac Pit."
     	end
+    
   
   end
 

@@ -9,8 +9,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    current_user
   	@user = User.find(params[:id])
-    @current_user_id = current_user.id
+    @current_user_id = session[:user_id]
   end
 
   def new
@@ -19,13 +20,16 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
+    # Passing through strong params defined at the bottom.
   	if @user.save
       current_user
-  		redirect_to login_path 
+  		redirect_to new_profile_path 
+      # redirect to new profile when user makes account.
   		flash[:notice] = "New account created. Happy Hunting."
   	else
   		redirect_to root_path 
   		flash[:notice] = "There was a problem creating your account. Back to SlaveI."
+      # Redirects to root path if not.
   	end
   end
 
@@ -66,23 +70,3 @@ class UsersController < ApplicationController
   end
 
 end 
-
-# def create
-#   	puts "these are the params *****************"
-#   	puts params[:user]
-#   	# I did this to find the params output in terminal
-#   	@user = User.new(params[:user])
-#     # @user.save
-#   	# create variable set to this and takes in the mass params of the user object.
-#     if @user.save
-#   	@user.save
-#       # save this variable. normally would set this in an if statement to make sure that it was allowed.
-#       flash[:notice] = "Your account has been created!"
-# 	   redirect_to user_path @user
-#     else
-#       flash[:notice] = "Sorry, We could not create your account...Please try agains."
-#       redirect_to login_path
-# 	    # redirect to the users site.
-#     end
-
-#   end
