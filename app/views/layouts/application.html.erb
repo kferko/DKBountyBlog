@@ -37,13 +37,13 @@
 		<div class="hoverbottom"></div>
 		<div class="menu_new">
 			<div class="menubox">
-				<a href='/posts'><div id="linkc">POSTS</div></a>
+				<div id="linkc"><%= link_to("POSTS", posts_path, method: :get) %></div>
 			</div>
 			<div class="menubox">
-				<a href='/users'><div id="linkc">HUNTERS</div></a>
+				<div id="linkc"><%= link_to("HUNTERS", users_path, method: :get) %></div>
 			</div>
 			<div class="menubox">
-				<a href='/users/new'><div id="linkc">BECOME A HUNTER</div></a>
+				<div id="linkc"><%= link_to("BECOME A HUNTER", new_user_path, method: :get) %></div>
 			</div>
 			<div class="menubox">
 				<div id="linkc"><%= link_to("NEW POST", new_post_path, method: :get) %></div>

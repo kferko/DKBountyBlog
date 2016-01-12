@@ -45,23 +45,29 @@ class PostsController < ApplicationController
     else
       redirect_to :back
       flash[:notice] = "Please Login to make a post."
-      # If no current users alerts them that they need to
+      # If no current users alerts them that they need to sign in and redirects back to same page.
     end
 
   end
 
   def edit
     @post = Post.find(params[:id])
+    # Sets @post to the show view matching with the matching id.
   end
 
   def update
     @post = Post.find(params[:id])
+    # Finds the Post with the correct post_id
     if current_user
+      # makes sure a user is logged in if not it redirects back and asks them to log in.
         if current_user.id == @post.user_id
           # making sure current_user_id matches the user_id on the post.
            @post.update(post_params)
+           # If it is correct user it passes the strong params through the update of the post.
            redirect_to @post
+           # Redirects to the specific post's path.
            flash[:notice] = "Post Updated!"
+           # flashes a sucess notice.
         else
           redirect_to @post
           flash[:alert] = "Nice Try Buddy. Not your post."
@@ -74,14 +80,19 @@ class PostsController < ApplicationController
 
   def destroy
   	@post = Post.find(params[:id])
-	  puts "**************"
-	  puts "DESTROYING POST"
+	  # finds correct post by the Post's Id
     if current_user
+      # makes sure a current_user is logged in. If not it redirects the user back and flashes a notice to log in.
         if current_user.id == @post.user_id
+          # Makes sure the current_user id matches the user_id for the post.
       	   @post.destroy
+           # destroys the post.
       	   redirect_to posts_path
+           # redirects back to the post index.
            flash[:notice] = "Post Deleted"
+           # flashes a sucess notice
         else
+          # if it fails it redirects back to index. and flashes a failure alert.
           redirect_to posts_path
           flash[:alert] = "Nice Try Buddy. Not your post."
   
@@ -95,6 +106,7 @@ class PostsController < ApplicationController
   private
   
   def post_params
+    # Strong Params also pass in the attributes for the image.
     params.require(:post).permit(:title, :body, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :image)
   end
 

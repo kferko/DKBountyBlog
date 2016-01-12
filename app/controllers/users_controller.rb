@@ -36,18 +36,21 @@ class UsersController < ApplicationController
   def destroy
   	# Setting @user variable to the user.find for this id.
   	@user = User.find(params[:id])
-  	# puts "DESTROYING USER *************"
-    # note to self testing in console.
     if current_user
+      # Making sure there is a current user. if not redirected back with error message
         if current_user.id == @user.id
+          # Makes sure the current user is the same user as the one set to be destroyed.
            @user.destroy
-           redirect_to login_path
+           # destroy user.
+           redirect_to root_path
+           # Redirect to root path and send success message
            flash[:alert] = "Your Account Has Been Deleted."
            session[:user_id] = nil
            # making sure to sign user out after destroying
         else
           redirect_to :back
           flash[:alert] = "Nice Try Buddy. Not your account to delete"
+          # if destroy fails send back and let them know its not their account.
         end
     else
       redirect_to :back

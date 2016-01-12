@@ -9,6 +9,7 @@
 					<div id="postin">
 						<!-- content_tag :h2, "Post Image" %> -->
 						<%= image_tag @posts.image_url(:thumb).to_s %>
+						<br>
 						<!-- content_tag :h2, "Post Body" %> -->
 						<%= @posts.body %>
 						<!-- if statement to make sure these links show up only if it is the current user's post -->
@@ -42,18 +43,18 @@
 				<div class="commentcontainer">
 					<div id="commentin">
 						<% @posts.comments.each do |comment| %>
-						<%= content_tag :h3, "Comment Title."%>
 						<%= comment.title %>
 						<br>
-						<%= content_tag :h3, "Comment Body." %>
 						<%= comment.body %>
-						<%= content_tag :h3, " Comment Author." %>
+						<br>
 						<%= comment.user.username %>
+						<br>
 							<!-- This conditional makes sure only comment author can delete comment -->
 							<% if comment.user_id == @current_user.id %>
 							<%= link_to("Delete comment", comment_path(comment.id), method: :delete) %>
 							<% end %>
 						<% end %>
+						<br>
 					</div>
 				</div>
 				<div class="planet"></div>
