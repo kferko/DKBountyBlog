@@ -2,6 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.posthomedc {
+	display: none;
+	// display: flex;
+	z-index: 9;
+	width: 660px;
+	height: 390px;
+	margin-top: 80px;
+	background-image: image-url('users_bkg.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+	margin-bottom: 30px;
+	position: absolute;
+}
+#phdisplayin {
+	// display: flex;
+	display: inline-block;
+	z-index: 9;
+	width: 570px;
+	height: 420px;
+	margin-left: 30px;
+	padding-left: 30px;
+	// background-color: rgba(255, 255, 255, .5);
+	// position: absolute;
+	overflow: auto;
+	font-family: 'Iceland', cursive;
+	font-size: 16px;
+	color: rgba(255, 255, 255, .7);
+}
+#phdisplayin h1 {
+	font-family: 'Iceberg', cursive;
+	font-size: 36px;
+	color: rgba(255, 255, 255, .7);
+	letter-spacing: 2px;
+}
+#phdisplayin h4 {
+	font-family: 'Orbitron', sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	color: rgba(255, 255, 255, .7);
+	letter-spacing: 2px;
+	line-height: -6px;
+}
+
+
+
+
+
+
 
 .postcontainer {
 	display: none;
@@ -21,37 +69,61 @@
 	z-index: 9;
 	width: 620px;
 	height: 20px;
-	margin-top: 20px;
 	margin-bottom: 20px;
-	margin-left: 40px;
-	padding: 10px;
-	background-color: rgba(255, 255, 255, .5);
+	margin-left: 60px;
 	position: fixed;
+}
+#posttitle h2{
+	font-family: 'Iceland', cursive;
+	font-size: 34px;
+	color: rgba(255, 255, 255, .9);
+	letter-spacing: 2px;
+	text-decoration: none;
 }
 #postdetails {
 	// display: flex;
 	z-index: 9;
 	width: 200px;
 	height: 20px;
-	margin-top: 20px;
+	margin-top: 10px;
 	margin-bottom: 20px;
 	margin-left: 700px;
-	background-color: rgba(255, 255, 255, .5);
+	// background-color: rgba(255, 255, 255, .5);
 	text-align: right;
-	padding: 10px;
+	// padding: 10px;
 	position: fixed;
 }
+
+#postdetails h2{
+	font-family: 'Iceland', cursive;
+	font-size: 22px;
+	color: rgba(255, 255, 255, .9);
+	text-decoration: none;
+}
+
 #postin {
 	// display: flex;
 	z-index: 9;
 	width: 850px;
 	height: 300px;
-	margin-top: 80px;
+	margin-top: 90px;
 	margin-left: 40px;
 	padding-left: 30px;
-	background-color: rgba(255, 255, 255, .5);
 	position: absolute;
 	overflow: auto;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 12px;
+	color: rgba(255, 255, 255, .9);
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+#postin h2{
+	font-family: 'Iceland', cursive;
+	font-size: 34px;
+	color: rgba(255, 255, 255, .9);
+	letter-spacing: 2px;
+	text-decoration: none;
 }
 
 .commentaddition {
@@ -68,14 +140,26 @@
 	position: absolute;
 }
 #commentaddin {
-	width: 330px;
-	height: 150px;
-	margin-top: 15px;
-	margin-left: 30px;
-	background-color: rgba(255, 255, 255, .5);
+	width: 300px;
+	height: 170px;
+	margin-left: 60px;
+	// background-color: rgba(255, 255, 255, .5);
 	overflow: auto;
 	position: absolute;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 12px;
+	color: rgba(255, 255, 255, .9);
+	letter-spacing: 2px;
+	text-decoration: none;
 }
+#commentaddin h3{
+	font-family: 'Iceland', cursive;
+	font-size: 24px;
+	color: rgba(255, 255, 255, .9);
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
 .commentcontainer {
 	display: none;
 	// display: flex;
@@ -94,7 +178,20 @@
 	height: 150px;
 	margin-top: 15px;
 	margin-left: 20px;
-	background-color: rgba(255, 255, 255, .5);
+	// background-color: rgba(255, 255, 255, .5);
 	overflow: auto;
 	position: absolute;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 12px;
+	color: rgba(255, 255, 255, .9);
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+#commentin h3{
+	font-family: 'Iceland', cursive;
+	font-size: 24px;
+	color: rgba(255, 255, 255, .9);
+	letter-spacing: 2px;
+	text-decoration: none;
 }

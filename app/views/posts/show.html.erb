@@ -1,20 +1,22 @@
 <div class="window">
 	<div class="postcontainer">
 		<div id="posttitle">
-			<%=content_tag :h2, "Post Title" %>
-			<%= @posts.title %>
+			<%= content_tag :h2, @posts.title %>
 		</div>
 					<div id="postdetails">
-						<%=content_tag :h2, "Post Author" %>
-						<%= @posts.user.username %>
+						<%= content_tag :h2, @posts.user.username %>
 					</div>
 					<div id="postin">
-						<%=content_tag :h2, "Post Image" %>
+						<!-- content_tag :h2, "Post Image" %> -->
 						<%= image_tag @posts.image_url(:thumb).to_s %>
-						<%=content_tag :h2, "Post Body" %>
+						<!-- content_tag :h2, "Post Body" %> -->
 						<%= @posts.body %>
 						<!-- if statement to make sure these links show up only if it is the current user's post -->
 						<% if @posts.user_id == @current_user.id %>
+						<br>
+						<br>
+						<br>
+						<br>
 						<%= link_to("Delete Post", @posts, method: :delete) %>
 						<%= link_to("Edit Post", edit_post_path, method: :get) %>
 						<% end %>
@@ -26,8 +28,12 @@
 					<%= form_for @comment do |f| %>
 					<%= f.label :title %>
 					<%= f.text_field :title %>
+					<br>
+					<br>
 					<%= f.label :body %>
 					<%= f.text_field :body %>
+					<br>
+					<br>
 					<%= f.hidden_field :post_id, :value => @posts.id %>
 					<%= f.submit :create %>
 					<% end %>
@@ -38,6 +44,7 @@
 						<% @posts.comments.each do |comment| %>
 						<%= content_tag :h3, "Comment Title."%>
 						<%= comment.title %>
+						<br>
 						<%= content_tag :h3, "Comment Body." %>
 						<%= comment.body %>
 						<%= content_tag :h3, " Comment Author." %>

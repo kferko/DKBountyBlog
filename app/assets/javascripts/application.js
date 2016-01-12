@@ -14,25 +14,26 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-if (top.location.pathname === '/'){
-      window.onload = function () {
-          $(".lightup").delay(1000).fadeIn(300);
-          $(".hovertop").delay(1600).fadeIn(500);
-          $(".hoverbottom").delay(1600).fadeIn(500);
-          $(".optics").delay(2000).fadeIn(500);
-          // $(".cm1").delay(5300).addClass("ot1-anim");
-          setTimeout(function(){
-            $(".cm1").toggleClass("ot1-anim");
-            $(".cm2").toggleClass("ot2-anim");
-            $(".cm3").toggleClass("ot3-anim");
-            $(".cm4").toggleClass("ot4-anim");
-           }, 3000);
-          $(".postcontainer").delay(4000).fadeIn(1000);
-          $(".userdisplaycontainer").delay(4000).fadeIn(1000);
-          $(".commentaddition").delay(4300).fadeIn(500);
-          $(".commentcontainer").delay(4300).fadeIn(500);
-      }
-}
+// if (top.location.pathname === '/'){
+//       window.onload = function () {
+//           $(".lightup").delay(1000).fadeIn(300);
+//           $(".hovertop").delay(1600).fadeIn(500);
+//           $(".hoverbottom").delay(1600).fadeIn(500);
+//           $(".optics").delay(2000).fadeIn(500);
+//           // $(".cm1").delay(5300).addClass("ot1-anim");
+//           setTimeout(function(){
+//             $(".cm1").toggleClass("ot1-anim");
+//             $(".cm2").toggleClass("ot2-anim");
+//             $(".cm3").toggleClass("ot3-anim");
+//             $(".cm4").toggleClass("ot4-anim");
+//            }, 3000);
+//           $(".postcontainer").delay(4000).fadeIn(500);
+//           $(".posthomedc").delay(4000).fadeIn(500);
+//           $(".userdisplaycontainer").delay(4000).fadeIn(500);
+//           $(".commentaddition").delay(4300).fadeIn(500);
+//           $(".commentcontainer").delay(4300).fadeIn(500);
+//       }
+// }
 
 if (top.location.pathname != '/'){
       window.onload = function () {
@@ -48,9 +49,10 @@ if (top.location.pathname != '/'){
             $(".cm4").toggleClass("ot8-anim");
            }, 1000);
           $(".postcontainer").delay(1200).fadeIn(1000);
+          $(".posthomedc").delay(1200).fadeIn(1000);
           $(".userdisplaycontainer").delay(1200).fadeIn(1000);
-          $(".commentaddition").delay(1400).fadeIn(500);
-          $(".commentcontainer").delay(1400).fadeIn(500);
+          $(".commentaddition").delay(1400).fadeIn(1000);
+          $(".commentcontainer").delay(1400).fadeIn(1000);
       }
 }
 
